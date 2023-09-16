@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public readonly struct Beat
 {
@@ -10,7 +12,7 @@ public readonly struct Beat
     {
         this.bar = bar;
         this.beatPrecise = beatPrecise;
-        this.beatRounded = Mathf.RoundToInt(beatPrecise);
+        this.beatRounded = Mathf.FloorToInt(beatPrecise);
     }
 }
 
@@ -19,16 +21,17 @@ public class BeatManager : MonoBehaviour
 {
     public static BeatManager Instance { get; private set; }
 
-    public bool Paused = false;
+    public UnityEvent<Beat> OnBeat;
 
     public float Offset = 0.0f;
     public float Bpm = 120;
     public uint SignatureTop = 4;
     public uint SignatureBottom = 4;
 
-    public Beat Beat { get; private set; }
+    public AudioSource Audio;
 
-    public float CurrentTime { get; private set; } = 0;
+    public Beat Beat { get; private set; } = new(1, 1);
+    private Beat _beatPrevious = new(1, 0);
 
     private float BeatDuration => 60.0f / this.Bpm / (this.SignatureBottom / 4);
 
@@ -48,19 +51,23 @@ public class BeatManager : MonoBehaviour
 
     private void Update()
     {
-        Time.fixedDeltaTime = BeatDuration;
+        this._beatPrevious = this.Beat;
+        this.Beat = this.ComputeBeatAt(this.Audio.time);
 
-        this.CurrentTime += Time.deltaTime;
-        this.Beat = this.ComputeBeatAt(CurrentTime);
+        if (this.Beat.beatRounded != this._beatPrevious.beatRounded)
+        {
+            this.OnBeat.Invoke(this.Beat);
+        }
     }
 
     private Beat ComputeBeatAt(float time)
     {
         time += this.Offset;
+
         return new Beat
         (
             bar: Mathf.FloorToInt(time / this.BeatDuration / this.SignatureTop) + 1,
-            beatPrecise: (time / this.BeatDuration % this.SignatureTop) + 1
+            beatPrecise: (time / this.BeatDuration) % this.SignatureTop + 1
         );
     }
 }
