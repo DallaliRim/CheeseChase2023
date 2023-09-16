@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 public class PathFinding : MonoBehaviour
 {
-    private Vector3 target;
+    private Vector2 target;
     NavMeshAgent agent;
 
     void Awake()
@@ -16,7 +16,7 @@ public class PathFinding : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -31,11 +31,12 @@ public class PathFinding : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Debug.Log(Input.mousePosition);
         }
     }
 
     void SetAgentPosition()
     {
-        agent.SetDestination(new Vector3(target.x, target.y, transform.position.z));
+        agent.SetDestination(new Vector2(target.x, target.y));
     }
 }
