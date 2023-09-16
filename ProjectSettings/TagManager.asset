@@ -6,6 +6,7 @@ TagManager:
   tags:
   - bluePlayer
   - redPlayer
+  - bankTeller
   layers:
   - Default
   - TransparentFX
