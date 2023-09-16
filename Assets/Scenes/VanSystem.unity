@@ -6334,7 +6334,6 @@ MonoBehaviour:
   moneyTextRed: {fileID: 462895893}
   moneyInVanRed: {fileID: 157869289}
   moneyInVanBlue: {fileID: 884867389}
-  moneyPerSecond: 10
   moneyAmount: 10000
 --- !u!4 &1792256939
 Transform:
