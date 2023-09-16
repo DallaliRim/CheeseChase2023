@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 185793276}
   - component: {fileID: 185793275}
   - component: {fileID: 185793274}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 310231469}
   - component: {fileID: 310231468}
   - component: {fileID: 310231467}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2621,7 +2621,7 @@ GameObject:
   - component: {fileID: 398895038}
   - component: {fileID: 398895037}
   - component: {fileID: 398895036}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3566,7 +3566,7 @@ GameObject:
   - component: {fileID: 998905205}
   - component: {fileID: 998905204}
   - component: {fileID: 998905203}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3739,7 +3739,7 @@ GameObject:
   - component: {fileID: 1023124072}
   - component: {fileID: 1023124071}
   - component: {fileID: 1023124070}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3912,7 +3912,7 @@ GameObject:
   - component: {fileID: 1144335933}
   - component: {fileID: 1144335932}
   - component: {fileID: 1144335931}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4085,7 +4085,7 @@ GameObject:
   - component: {fileID: 1191633723}
   - component: {fileID: 1191633722}
   - component: {fileID: 1191633721}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4570,7 +4570,7 @@ GameObject:
   - component: {fileID: 1364333198}
   - component: {fileID: 1364333197}
   - component: {fileID: 1364333196}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4743,7 +4743,7 @@ GameObject:
   - component: {fileID: 1376698189}
   - component: {fileID: 1376698188}
   - component: {fileID: 1376698187}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4916,7 +4916,7 @@ GameObject:
   - component: {fileID: 1387422321}
   - component: {fileID: 1387422320}
   - component: {fileID: 1387422319}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5224,7 +5224,7 @@ GameObject:
   - component: {fileID: 1480796184}
   - component: {fileID: 1480796183}
   - component: {fileID: 1480796182}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5639,7 +5639,7 @@ GameObject:
   - component: {fileID: 1541348374}
   - component: {fileID: 1541348373}
   - component: {fileID: 1541348372}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5916,7 +5916,7 @@ GameObject:
   - component: {fileID: 1739163995}
   - component: {fileID: 1739163994}
   - component: {fileID: 1739163993}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6165,7 +6165,7 @@ GameObject:
   - component: {fileID: 1778412983}
   - component: {fileID: 1778412982}
   - component: {fileID: 1778412981}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6646,7 +6646,7 @@ GameObject:
   - component: {fileID: 2048567260}
   - component: {fileID: 2048567259}
   - component: {fileID: 2048567258}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6819,7 +6819,7 @@ GameObject:
   - component: {fileID: 2081164496}
   - component: {fileID: 2081164495}
   - component: {fileID: 2081164494}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6992,7 +6992,7 @@ GameObject:
   - component: {fileID: 2109290098}
   - component: {fileID: 2109290097}
   - component: {fileID: 2109290096}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Money (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7356,6 +7356,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7125561396863202249, guid: 2e2d93a0e7e980d4680151cb2b69ad28, type: 3}
+      propertyPath: moneyManager
+      value: 
+      objectReference: {fileID: 1792256938}
     - target: {fileID: 8574444702201680499, guid: 2e2d93a0e7e980d4680151cb2b69ad28, type: 3}
       propertyPath: m_Name
       value: TestPlayerRed
@@ -7454,6 +7458,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6310354965947946475, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
+      propertyPath: moneyManager
+      value: 
+      objectReference: {fileID: 1792256938}
     - target: {fileID: 6310354965947946475, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
       propertyPath: layerMask.m_Bits
       value: 4

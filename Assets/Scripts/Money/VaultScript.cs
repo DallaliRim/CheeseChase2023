@@ -14,19 +14,6 @@ public class VaultScript : MonoBehaviour
     public bool blueInVault;
     public bool redInVault;
 
-    public void Update()
-    {
-        // calling event from MoneyManager.
-
-        if (blueInVault)
-        {
-            RedEnters.Invoke();
-        }
-        if (redInVault)
-        {
-            BlueEnters.Invoke();
-        }
-    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("bluePlayer"))
