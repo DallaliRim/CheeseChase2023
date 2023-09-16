@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("VanSystem_working");
+        
     }
 
     public void GoToSettingsMenu() 
