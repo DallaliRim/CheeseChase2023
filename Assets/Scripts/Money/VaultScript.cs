@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 public class VaultScript : MonoBehaviour
 {
+
+    // disable this script if we are going collectible instead
+
     public UnityEvent RedEnters;
     public UnityEvent BlueEnters;
 

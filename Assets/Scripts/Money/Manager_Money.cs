@@ -17,6 +17,9 @@ public class Manager_Money : MonoBehaviour
 
     [Header("How much money player should get per second in vault")]
     public int moneyPerSecond;
+    [Header("How much money player picks up per money object collected")]
+
+    public int moneyAmount;
 
     void Update()
     {
@@ -33,6 +36,16 @@ public class Manager_Money : MonoBehaviour
     public void IncreaseMoneyForRedPlayer()
     {
         moneyPlayerRed += moneyPerSecond;
+    }
+
+    public void BluePicksUpMoney()
+    {
+        moneyPlayerBlue += moneyAmount;
+    }
+
+    public void RedPicksUpMoney()
+    {
+        moneyPlayerRed += moneyAmount;
     }
 
 }
