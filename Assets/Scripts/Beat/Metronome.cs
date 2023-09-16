@@ -5,9 +5,13 @@ public class Metronome : MonoBehaviour
     public AudioClip strong;
     public AudioClip weak;
 
-    private void FixedUpdate()
+    public AudioSource source;
+
+    public void Start() { }
+    public void Update() { }
+
+    public void Click(Beat beat)
     {
-        Beat beat = BeatManager.Instance.Beat;
-        AudioSource.PlayClipAtPoint(beat.beatRounded == 1 ? this.strong : this.weak, Camera.main.transform.position);
+        source.PlayOneShot(beat.beatRounded == 1 ? this.strong : this.weak);
     }
 }
