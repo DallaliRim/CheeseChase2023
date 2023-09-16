@@ -18,7 +18,7 @@ public class GridMovementRed : MonoBehaviour
     {
         if (!PauseMenu.isPaused)
         {
-            if (Mathf.Abs(beatManager.Beat.beatRounded - beatManager.Beat.beatPrecise) < 0.2)
+            if (beatManager.IsOnBeat)
             {
                 if (Input.GetKeyDown(KeyCode.W) && !HitRaycast(Vector2.up))
                 {

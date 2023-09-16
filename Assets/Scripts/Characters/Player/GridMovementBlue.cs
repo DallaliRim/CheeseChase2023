@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GridMovementBlue : MonoBehaviour
 {
@@ -16,21 +17,21 @@ public class GridMovementBlue : MonoBehaviour
     {
         if (!PauseMenu.isPaused)
         {
-            if (Mathf.Abs(beatManager.Beat.beatRounded - beatManager.Beat.beatPrecise) < 0.2)
+            if (beatManager.IsOnBeat)
             {
                 if (Input.GetKeyDown(KeyCode.UpArrow) && !HitRaycast(Vector2.up))
                 {
                     transform.Translate(Vector2.up * gridSize);
                 }
-                if (Input.GetKeyDown(KeyCode.DownArrow) && !HitRaycast(Vector2.down))
+                else if (Input.GetKeyDown(KeyCode.DownArrow) && !HitRaycast(Vector2.down))
                 {
                     transform.Translate(Vector2.down * gridSize);
                 }
-                if (Input.GetKeyDown(KeyCode.RightArrow) && !HitRaycast(Vector2.right))
+                else if (Input.GetKeyDown(KeyCode.RightArrow) && !HitRaycast(Vector2.right))
                 {
                     transform.Translate(Vector2.right * gridSize);
                 }
-                if (Input.GetKeyDown(KeyCode.LeftArrow) && !HitRaycast(Vector2.left))
+                else if (Input.GetKeyDown(KeyCode.LeftArrow) && !HitRaycast(Vector2.left))
                 {
                     transform.Translate(Vector2.left * gridSize);
                 }
