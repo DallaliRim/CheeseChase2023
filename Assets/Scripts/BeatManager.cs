@@ -1,15 +1,39 @@
 using UnityEngine;
 
-public struct Rhythm
+public readonly struct Rhythm
 {
-    public float bpm;
-    public uint signatureTop;
-    public uint signatureBottom;
+    public readonly float bpm;
+    public readonly uint signatureTop;
+    public readonly uint signatureBottom;
+
+    public Rhythm(float bpm, uint signatureTop, uint signatureBottom)
+    {
+        this.bpm = bpm;
+        this.signatureTop = signatureTop;
+        this.signatureBottom = signatureBottom;
+    }
 }
 
-public struct Music
+public readonly struct Music
 {
-    public Rhythm rhythm;
+    public readonly Rhythm rhythm;
+
+    public Music(Rhythm rhythm)
+    {
+        this.rhythm = rhythm;
+    }
+}
+
+public readonly struct Beat
+{
+    public readonly int bar;
+    public readonly float beat;
+
+    public Beat(int bar, float beat)
+    {
+        this.bar = bar;
+        this.beat = beat;
+    }
 }
 
 
@@ -20,10 +44,11 @@ public class BeatManager : MonoBehaviour
     public bool Paused = false;
     public Music? Music { get; set; }
 
-    public float Beat { get; private set; }
-    public float Bar { get; private set; }
+    public Beat Beat { get; private set; }
 
-    private float _timeCurrent = 0;
+    public float CurrentTime { get; private set; } = 0;
+
+    private bool IsPlayable { get => !this.Paused && this.Music.HasValue; }
 
     private void Awake()
     {
@@ -43,28 +68,39 @@ public class BeatManager : MonoBehaviour
     {
         // TODO: Remove later, test code
         this.Music = new Music
-        {
-            rhythm = new Rhythm
-            {
-                bpm = 120,
-                signatureTop = 4,
-                signatureBottom = 4
-            }
-        };
+        (
+            rhythm: new Rhythm
+            (
+                bpm: 120,
+                signatureTop: 4,
+                signatureBottom: 4
+            )
+        );
     }
 
     private void Update()
     {
-        if (!this.Paused && this.Music.HasValue)
+        if (this.IsPlayable)
         {
-            Rhythm section = this.Music.Value.rhythm;
-
-            this._timeCurrent += Time.deltaTime;
-
-            float beatDuration = 60.0f / section.bpm / (section.signatureBottom / 4);
-
-            this.Beat = (this._timeCurrent / beatDuration % section.signatureTop) + 1;
-            this.Bar = Mathf.FloorToInt(this._timeCurrent / beatDuration / section.signatureTop) + 1;
+            this.CurrentTime += Time.deltaTime;
+            this.Beat = this.GetBeatAt(CurrentTime).Value;
+            Debug.Log($"{this.Beat.bar}:{this.Beat.beat}");
         }
+    }
+
+    private Beat? GetBeatAt(float time)
+    {
+        if (this.IsPlayable)
+        {
+            Rhythm rhythm = this.Music.Value.rhythm;
+            float beatDuration = 60.0f / rhythm.bpm / (rhythm.signatureBottom / 4);
+
+            return new Beat
+            (
+                bar: Mathf.FloorToInt(this.CurrentTime / beatDuration / rhythm.signatureTop) + 1,
+                beat: (this.CurrentTime / beatDuration % rhythm.signatureTop) + 1
+            );
+        }
+        return null;
     }
 }
