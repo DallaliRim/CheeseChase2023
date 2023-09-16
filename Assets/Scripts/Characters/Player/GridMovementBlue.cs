@@ -3,6 +3,7 @@ using UnityEngine;
 public class GridMovementBlue : MonoBehaviour
 {
     public LayerMask layerMask;
+    public Manager_Money moneyManager;
     public float gridSize;
 
     void Update()
@@ -37,12 +38,21 @@ public class GridMovementBlue : MonoBehaviour
         {
             //Hit something, print the tag of the object
             Debug.Log("Hitting: " + hit.collider.gameObject.name);
+            CheckMoneySpill(hit.collider.gameObject.tag);
             return true;
         }
         else
         {
             Debug.Log("Hiting nothing");
             return false;
+        }
+    }
+
+    void CheckMoneySpill(string colliderTag)
+    {
+        if(colliderTag == "bankTeller")
+        {
+            moneyManager.moneyPlayerBlue = 0;
         }
     }
 }

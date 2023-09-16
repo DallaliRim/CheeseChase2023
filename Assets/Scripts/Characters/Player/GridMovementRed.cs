@@ -3,13 +3,8 @@ using UnityEngine;
 public class GridMovementRed : MonoBehaviour
 {
     public LayerMask layerMask;
+    public Manager_Money moneyManager;
     public float gridSize;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -45,12 +40,21 @@ public class GridMovementRed : MonoBehaviour
         {
             //Hit something, print the tag of the object
             Debug.Log("Hitting: " + hit.collider.gameObject.name);
+            CheckMoneySpill(hit.collider.gameObject.tag);
             return true;
         }
         else
         {
             Debug.Log("Hiting nothing");
             return false;
+        }
+    }
+
+    void CheckMoneySpill(string colliderTag)
+    {
+        if(colliderTag == "bankTeller")
+        {
+            moneyManager.moneyPlayerRed = 0;
         }
     }
 }
