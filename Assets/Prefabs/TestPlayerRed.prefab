@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5217819609020288731}
   - component: {fileID: 8824981628081150810}
   - component: {fileID: 7125561396863202249}
+  - component: {fileID: 3750935556669625103}
   m_Layer: 2
   m_Name: TestPlayerRed
   m_TagString: redPlayer
@@ -146,10 +147,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 0.5}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -171,7 +172,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f79cd5bef83c94e8391100a7c56ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: 1
   layerMask:
     serializedVersion: 2
     m_Bits: 4
+  gridSize: 1
+--- !u!114 &3750935556669625103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8574444702201680499}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c582c5bcf712c5e4ebae1b23b8e21acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snap: 1
