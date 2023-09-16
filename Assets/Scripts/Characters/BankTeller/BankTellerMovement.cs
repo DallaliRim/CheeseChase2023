@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BankTellerMovement : MonoBehaviour
@@ -7,17 +5,16 @@ public class BankTellerMovement : MonoBehaviour
     public float maxDistance = 1.0f; 
 
     private Vector2 startingPosition;
-    private float nextMoveTime = 0f;
+    private bool centered;
 
     private void Start()
     {
-        nextMoveTime = Time.time + 1.0f;
         startingPosition = transform.position; 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (Time.time >= nextMoveTime)
+        if(centered)
         {
             Vector2 randomDirection = Vector2.zero; 
 
@@ -34,7 +31,10 @@ public class BankTellerMovement : MonoBehaviour
             Vector2 clampedPosition = Vector2.ClampMagnitude(newPosition - startingPosition, maxDistance) + startingPosition;
 
             transform.position = clampedPosition;
-            nextMoveTime = Time.time + 1.0f;
+            centered = false;
+        } else {
+            transform.position = startingPosition;
+            centered = true;
         }
     }
 }
