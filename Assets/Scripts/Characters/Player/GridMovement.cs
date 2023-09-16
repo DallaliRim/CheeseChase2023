@@ -21,19 +21,19 @@ public class GridMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            transform.Translate(Vector2.up * gridSize);
+            transform.Translate(Vector3.up * gridSize);
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            transform.Translate(Vector2.down * gridSize);
+            transform.Translate(Vector3.down * gridSize);
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            transform.Translate(Vector2.right * gridSize);
+            transform.Translate(Vector3.right * gridSize);
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            transform.Translate(Vector2.left * gridSize);
+            transform.Translate(Vector3.left * gridSize);
         }
     }
 }
