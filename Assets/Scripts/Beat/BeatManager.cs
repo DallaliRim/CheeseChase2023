@@ -21,6 +21,7 @@ public class BeatManager : MonoBehaviour
 
     public bool Paused = false;
 
+    public float Offset = 0.0f;
     public float Bpm = 120;
     public uint SignatureTop = 4;
     public uint SignatureBottom = 4;
@@ -55,6 +56,7 @@ public class BeatManager : MonoBehaviour
 
     private Beat ComputeBeatAt(float time)
     {
+        time += this.Offset;
         return new Beat
         (
             bar: Mathf.FloorToInt(time / this.BeatDuration / this.SignatureTop) + 1,
