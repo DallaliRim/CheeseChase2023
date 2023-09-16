@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     public float collisionOffset = 0.05f;
 
     public ContactFilter2D movementFilter;
-    public 
 
     Vector2 movementInput;
     Rigidbody2D playerBody;
