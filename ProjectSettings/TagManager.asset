@@ -8,6 +8,7 @@ TagManager:
   - redPlayer
   - bankTeller
   - van
+  - pauseMenu
   layers:
   - Default
   - TransparentFX

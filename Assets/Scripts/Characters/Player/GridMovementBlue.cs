@@ -8,22 +8,26 @@ public class GridMovementBlue : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && !HitRaycast(Vector2.up))
+        if (!PauseMenu.isPaused)
         {
-            transform.Translate(Vector2.up * gridSize);
+            if (Input.GetKeyDown(KeyCode.UpArrow) && !HitRaycast(Vector2.up))
+            {
+                transform.Translate(Vector2.up * gridSize);
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow) && !HitRaycast(Vector2.up))
+            {
+                transform.Translate(Vector2.down * gridSize);
+            }
+            if (Input.GetKeyDown(KeyCode.RightArrow) && !HitRaycast(Vector2.up))
+            {
+                transform.Translate(Vector2.right * gridSize);
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && !HitRaycast(Vector2.up))
+            {
+                transform.Translate(Vector2.left * gridSize);
+            }
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow) && !HitRaycast(Vector2.up))
-        {
-            transform.Translate(Vector2.down * gridSize);
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow) && !HitRaycast(Vector2.up))
-        {
-            transform.Translate(Vector2.right * gridSize);
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && !HitRaycast(Vector2.up))
-        {
-            transform.Translate(Vector2.left * gridSize);
-        }
+
     }
     bool HitRaycast(Vector2 fwd)
     {
@@ -31,7 +35,7 @@ public class GridMovementBlue : MonoBehaviour
 
         //Get the first object hit by the ray
         RaycastHit2D hit = Physics2D.Raycast(transform.position, fwd, laserLength, ~layerMask);
-        
+
         //Method to draw the ray in scene for debug purpose
         Debug.DrawRay(transform.position, fwd * laserLength, Color.red);
         if (hit.collider != null)
@@ -50,7 +54,7 @@ public class GridMovementBlue : MonoBehaviour
 
     void CheckMoneySpill(string colliderTag)
     {
-        if(colliderTag == "bankTeller")
+        if (colliderTag == "bankTeller")
         {
             moneyManager.moneyPlayerBlue = 0;
         }
