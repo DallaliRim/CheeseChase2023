@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6154522759028486794}
   - component: {fileID: 2395858705997044246}
   - component: {fileID: 109097835540021823}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 6049330093599638868}
   - component: {fileID: 3967638346396306478}
   - component: {fileID: 3880691180371587867}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Popup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 4713691843896420010}
   - component: {fileID: 3020465047601814446}
   - component: {fileID: 4079187318330782095}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 6310354965947946475}
   - component: {fileID: 6373948732388713633}
   - component: {fileID: 2492707947687816306}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: TestPlayerBlue
   m_TagString: bluePlayer
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ Transform:
   m_Children:
   - {fileID: 6545529916189280723}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4566874913337842736
 SpriteRenderer:
@@ -444,7 +444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 12
   gridSize: 1
 --- !u!61 &6373948732388713633
 BoxCollider2D:

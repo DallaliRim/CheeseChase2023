@@ -5,26 +5,37 @@ public class GridMovementRed : MonoBehaviour
     public LayerMask layerMask;
     public Manager_Money moneyManager;
     public float gridSize;
+    private BeatManager beatManager;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        beatManager = BeatManager.Instance;
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (!PauseMenu.isPaused)
         {
-            if (Input.GetKeyDown(KeyCode.W) && !HitRaycast(Vector2.up))
+            if (Mathf.Abs(beatManager.Beat.beatRounded - beatManager.Beat.beatPrecise) < 0.2)
             {
-                transform.Translate(Vector2.up * gridSize);
-            }
-            if (Input.GetKeyDown(KeyCode.S) && !HitRaycast(Vector2.down))
-            {
-                transform.Translate(Vector2.down * gridSize);
-            }
-            if (Input.GetKeyDown(KeyCode.D) && !HitRaycast(Vector2.right))
-            {
-                transform.Translate(Vector2.right * gridSize);
-            }
-            if (Input.GetKeyDown(KeyCode.A) && !HitRaycast(Vector2.left))
-            {
-                transform.Translate(Vector2.left * gridSize);
+                if (Input.GetKeyDown(KeyCode.W) && !HitRaycast(Vector2.up))
+                {
+                    transform.Translate(Vector2.up * gridSize);
+                }
+                else if (Input.GetKeyDown(KeyCode.S) && !HitRaycast(Vector2.down))
+                {
+                    transform.Translate(Vector2.down * gridSize);
+                }
+                else if (Input.GetKeyDown(KeyCode.D) && !HitRaycast(Vector2.right))
+                {
+                    transform.Translate(Vector2.right * gridSize);
+                }
+                else if (Input.GetKeyDown(KeyCode.A) && !HitRaycast(Vector2.left))
+                {
+                    transform.Translate(Vector2.left * gridSize);
+                }
             }
         }
 

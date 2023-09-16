@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8824981628081150810}
   - component: {fileID: 7125561396863202249}
   - component: {fileID: 3750935556669625103}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: TestPlayerRed
   m_TagString: redPlayer
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5171842038419631689
 SpriteRenderer:
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 4
+    m_Bits: 68
   gridSize: 1
 --- !u!114 &3750935556669625103
 MonoBehaviour:
