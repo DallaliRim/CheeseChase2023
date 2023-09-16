@@ -85,7 +85,7 @@ public class BeatManager : MonoBehaviour
             rhythm: new Rhythm
             (
                 bpm: 120,
-                signatureTop: 3,
+                signatureTop: 4,
                 signatureBottom: 4
             )
         );
@@ -98,8 +98,6 @@ public class BeatManager : MonoBehaviour
             this.CurrentTime += Time.deltaTime;
             this.Beat = this.GetBeatAt(CurrentTime).Value;
             Time.fixedDeltaTime = BeatDuration.Value;
-
-            Debug.Log($"{this.Beat.bar}:{this.Beat.beat}");
         }
     }
 
