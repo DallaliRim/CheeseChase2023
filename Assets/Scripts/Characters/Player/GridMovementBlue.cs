@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridMovement : MonoBehaviour
+public class GridMovementBlue : MonoBehaviour
 {
-
-    // THIS IS AN OUTDATED GRID MOVEMENT SCRIPT. SINCE THERE IS 2 PLAYERS, 
-    // USE GRID MOVEMENT BLUE AND GRIDMOVEMENT RED
-
     public float gridSize;
 
     // Start is called before the first frame update

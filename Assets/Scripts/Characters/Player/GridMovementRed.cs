@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridMovement : MonoBehaviour
+public class GridMovementRed : MonoBehaviour
 {
-
-    // THIS IS AN OUTDATED GRID MOVEMENT SCRIPT. SINCE THERE IS 2 PLAYERS, 
-    // USE GRID MOVEMENT BLUE AND GRIDMOVEMENT RED
-
     public float gridSize;
 
     // Start is called before the first frame update
@@ -19,19 +15,19 @@ public class GridMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             transform.Translate(Vector2.up * gridSize);
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             transform.Translate(Vector2.down * gridSize);
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             transform.Translate(Vector2.right * gridSize);
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.Translate(Vector2.left * gridSize);
         }
