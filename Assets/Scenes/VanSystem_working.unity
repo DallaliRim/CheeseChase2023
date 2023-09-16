@@ -4801,8 +4801,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f003e65b5b69d584a9658c16cd293d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strong: {fileID: 0}
-  weak: {fileID: 0}
+  strong: {fileID: 8300000, guid: 2d74cb0369eec4a40a58aab8fa2c7803, type: 3}
+  weak: {fileID: 8300000, guid: eacfd9c3c3c90434e8309b5deeb9a0b5, type: 3}
 --- !u!114 &1345738180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4816,6 +4816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Paused: 0
+  Offset: 0
   Bpm: 120
   SignatureTop: 4
   SignatureBottom: 4
