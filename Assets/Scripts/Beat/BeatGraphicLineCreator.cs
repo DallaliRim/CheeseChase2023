@@ -23,7 +23,6 @@ internal class BeatGraphic
     {
         this._left = CreateBeatImage(parent, sprite, size);
         this._right = CreateBeatImage(parent, sprite, size);
-        Debug.Log("here");
     }
 
     private static GameObject CreateBeatImage(GameObject parent, Sprite sprite, float size)
