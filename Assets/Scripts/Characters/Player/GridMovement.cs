@@ -35,6 +35,5 @@ public class GridMovement : MonoBehaviour
         {
             transform.Translate(Vector2.left * gridSize);
         }
-
     }
 }
