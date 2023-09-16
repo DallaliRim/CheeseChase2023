@@ -4,38 +4,48 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using UnityEngine.Events;
 
 public class Manager_Money : MonoBehaviour
 {
 
-    [Header("Money amounts for the left player and right player")]
+    [Header("Money the players are holding")]
     public int moneyPlayerBlue = 0;
     public int moneyPlayerRed = 0;
+
+    // this is just here so the money gameobjects can tell if max limit has been reached or not. 
+    // should not use this for anything else. Need to use debug.log() to look at their values.
+    public static int moneyPlayerBlueOnHand;
+    public static int moneyPlayerRedOnHand;
+
+    [Header("Money players have in vans")]
+    public int moneyVanPlayerBlue = 0;
+    public int moneyVanPlayerRed = 0;
+
     [Header("References to the money UI")]
     public TextMeshProUGUI moneyTextBlue;
     public TextMeshProUGUI moneyTextRed;
 
-    [Header("How much money player should get per second in vault")]
-    public int moneyPerSecond;
-    [Header("How much money player picks up per money object collected")]
+    public TextMeshProUGUI moneyInVanRed;
+    public TextMeshProUGUI moneyInVanBlue;
 
-    public int moneyAmount;
+    [Header("How much money player picks up per money object collected")]
+    public int moneyAmount = 5000;
+
+    [Header("How much money a player can carry at a time.")]
+    public static int maxMoneyAmount = 20000;
 
     void Update()
     {
         moneyTextBlue.text = "Money: " + moneyPlayerBlue.ToString();
         moneyTextRed.text = "Money: " + moneyPlayerRed.ToString();
-    }
 
+        moneyInVanBlue.text = "Collected: " + moneyVanPlayerBlue.ToString();
+        moneyInVanRed.text = "Collected: " + moneyVanPlayerRed.ToString();
 
-    public void IncreaseMoneyForBluePlayer()
-    {
-        moneyPlayerBlue += moneyPerSecond;
-    }
-
-    public void IncreaseMoneyForRedPlayer()
-    {
-        moneyPlayerRed += moneyPerSecond;
+        // so the 2 can be in sync
+        moneyPlayerBlueOnHand = moneyPlayerBlue;
+        moneyPlayerRedOnHand = moneyPlayerRed;
     }
 
     public void BluePicksUpMoney()
@@ -46,6 +56,18 @@ public class Manager_Money : MonoBehaviour
     public void RedPicksUpMoney()
     {
         moneyPlayerRed += moneyAmount;
+    }
+
+    public void BlueDepositsMoney()
+    {
+        moneyVanPlayerBlue += moneyPlayerBlue;
+        moneyPlayerBlue = 0;
+    }
+
+    public void RedDepositsMoney()
+    {
+        moneyVanPlayerRed += moneyPlayerRed;
+        moneyPlayerRed = 0;
     }
 
 }
