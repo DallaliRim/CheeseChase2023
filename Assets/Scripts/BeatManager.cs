@@ -50,6 +50,19 @@ public class BeatManager : MonoBehaviour
 
     private bool IsPlayable { get => !this.Paused && this.Music.HasValue; }
 
+    private float? BeatDuration
+    {
+        get
+        {
+            if (this.IsPlayable)
+            {
+                Rhythm rhythm = this.Music.Value.rhythm;
+                return 60.0f / rhythm.bpm / (rhythm.signatureBottom / 4);
+            }
+            return null;
+        }
+    }
+
     private void Awake()
     {
         if (Instance == null)
@@ -72,7 +85,7 @@ public class BeatManager : MonoBehaviour
             rhythm: new Rhythm
             (
                 bpm: 120,
-                signatureTop: 4,
+                signatureTop: 3,
                 signatureBottom: 4
             )
         );
@@ -84,6 +97,8 @@ public class BeatManager : MonoBehaviour
         {
             this.CurrentTime += Time.deltaTime;
             this.Beat = this.GetBeatAt(CurrentTime).Value;
+            Time.fixedDeltaTime = BeatDuration.Value;
+
             Debug.Log($"{this.Beat.bar}:{this.Beat.beat}");
         }
     }
@@ -93,7 +108,7 @@ public class BeatManager : MonoBehaviour
         if (this.IsPlayable)
         {
             Rhythm rhythm = this.Music.Value.rhythm;
-            float beatDuration = 60.0f / rhythm.bpm / (rhythm.signatureBottom / 4);
+            float beatDuration = this.BeatDuration.Value;
 
             return new Beat
             (
