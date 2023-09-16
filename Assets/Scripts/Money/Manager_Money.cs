@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using UnityEngine.Events;
 
 public class Manager_Money : MonoBehaviour
 {
@@ -28,13 +29,11 @@ public class Manager_Money : MonoBehaviour
     public TextMeshProUGUI moneyInVanRed;
     public TextMeshProUGUI moneyInVanBlue;
 
-    [Header("How much money player should get per second in vault")]
-    public int moneyPerSecond;
     [Header("How much money player picks up per money object collected")]
     public int moneyAmount = 5000;
 
     [Header("How much money a player can carry at a time.")]
-    public static int maxMoneyAmount = 10000;
+    public static int maxMoneyAmount = 20000;
 
     void Update()
     {
@@ -47,17 +46,6 @@ public class Manager_Money : MonoBehaviour
         // so the 2 can be in sync
         moneyPlayerBlueOnHand = moneyPlayerBlue;
         moneyPlayerRedOnHand = moneyPlayerRed;
-    }
-
-
-    public void IncreaseMoneyForBluePlayer()
-    {
-        moneyPlayerBlue += moneyPerSecond;
-    }
-
-    public void IncreaseMoneyForRedPlayer()
-    {
-        moneyPlayerRed += moneyPerSecond;
     }
 
     public void BluePicksUpMoney()
