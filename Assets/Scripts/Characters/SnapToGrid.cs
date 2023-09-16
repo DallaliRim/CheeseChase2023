@@ -19,20 +19,20 @@ public class SnapToGrid : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         _transform.position = GetSharedSnapPosition(_transform.position, snap);
     }
 
     // Accepts a position, and sets each axis-value of the position to be snapped according to the value of snap
-    public static Vector2 GetSharedSnapPosition(Vector2 originalPosition, int snap)
+    public static Vector3 GetSharedSnapPosition(Vector3 originalPosition, int snap)
     {
-        return new Vector2(GetSnapValue(originalPosition.x, snap), GetSnapValue(originalPosition.y, snap));
+        return new Vector3(GetSnapValue(originalPosition.x, snap), GetSnapValue(originalPosition.y, snap), GetSnapValue(originalPosition.z, snap));
     }
 
     // Accepts a value, and snaps it according to the value of snap
     public static float GetSnapValue(float value, int snap)
     {
-        return (!Mathf.Approximately(snap, 0f)) ? Mathf.RoundToInt(value / snap) * snap : value;
+        return Mathf.RoundToInt(value / snap) * snap;
     }
 }

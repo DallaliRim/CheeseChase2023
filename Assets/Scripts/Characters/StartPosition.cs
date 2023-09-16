@@ -5,7 +5,7 @@ using UnityEngine;
 public class StartPosition : MonoBehaviour
 {
     [Header("0.5, 0,5 is world center for pivot points that are at center.")]
-    public Vector2 startPos = new Vector2(0.5f, 0.5f);
+    public Vector3 startPos = new Vector3(0.5f, 0.5f);
 
     // Start is called before the first frame update
     void Start()
