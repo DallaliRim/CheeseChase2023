@@ -57,7 +57,6 @@ public class BeatGraphicLineCreator : MonoBehaviour
         for (int i = 0; i < BeatManager.Instance.SignatureTop; i++)
         {
             this._beatGraphics.Add(new BeatGraphic(this.gameObject, sprite, this.Height));
-            //this._beatGraphics[i - 1].Distance = i * this.Width / 2 / BeatManager.Instance.SignatureTop;
         }
     }
 

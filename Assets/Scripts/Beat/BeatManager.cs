@@ -30,8 +30,8 @@ public class BeatManager : MonoBehaviour
 
     public AudioSource Audio;
 
-    public Beat Beat { get; private set; } = new Beat(1, 1);
-    private Beat _beatPrevious = new Beat(1, 0);
+    public Beat Beat { get; private set; } = new(1, 1);
+    private Beat _beatPrevious = new(1, 0);
 
     private float BeatDuration => 60.0f / this.Bpm / (this.SignatureBottom / 4);
 
@@ -51,7 +51,6 @@ public class BeatManager : MonoBehaviour
 
     private void Update()
     {
-        Time.fixedDeltaTime = BeatDuration;
         this._beatPrevious = this.Beat;
         this.Beat = this.ComputeBeatAt(this.Audio.time);
 
