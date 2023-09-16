@@ -18,7 +18,6 @@ public class PathFinding : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.fixedDeltaTime = 1;
     }
 
     // Update is called once per frame
@@ -27,7 +26,8 @@ public class PathFinding : MonoBehaviour
         SetAgentPosition();
     }
 
-    void Update() {
+    void Update()
+    {
         SetTargetPosition();
     }
 
@@ -54,13 +54,13 @@ public class PathFinding : MonoBehaviour
             if (Math.Abs(relativeVector.x) > Math.Abs(relativeVector.y))
             {
                 sign = Math.Sign(relativeVector.x);
-                Debug.Log($"x: {transform.position.x} -> {transform.position.x + sign}");
+                // Debug.Log($"x: {transform.position.x} -> {transform.position.x + sign}");
                 transform.position = new Vector3((int)transform.position.x + sign, transform.position.y, transform.position.z);
             }
             else
             {
                 sign = Math.Sign(relativeVector.y);
-                Debug.Log($"y: {transform.position.y} -> {transform.position.y + sign}");
+                // Debug.Log($"y: {transform.position.y} -> {transform.position.y + sign}");
                 transform.position = new Vector3(transform.position.x, (int)transform.position.y + sign, transform.position.z);
             }
         }
