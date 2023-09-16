@@ -19,7 +19,7 @@ public class SnapToGrid : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         _transform.position = GetSharedSnapPosition(_transform.position, snap);
     }
