@@ -32,11 +32,11 @@ public class Manager_Money : MonoBehaviour
 
     void Update()
     {
-        moneyTextBlue.text = $"Pocket: {moneyPlayerBlue}$";
-        moneyTextRed.text =  $"Pocket: {moneyPlayerRed}$";
+        moneyTextBlue.text = $"Pocket: {moneyPlayerRed}$";
+        moneyTextRed.text =  $"Pocket: {moneyPlayerBlue}$";
 
-        moneyInVanBlue.text = $"Collected: {moneyVanPlayerBlue}$";
-        moneyInVanRed.text = $"Collected: {moneyVanPlayerRed}$";
+        moneyInVanBlue.text = $"Collected: {moneyVanPlayerRed}$";
+        moneyInVanRed.text = $"Collected: {moneyVanPlayerBlue}$";
 
         // so the 2 can be in sync
         moneyPlayerBlueOnHand = moneyPlayerBlue;
