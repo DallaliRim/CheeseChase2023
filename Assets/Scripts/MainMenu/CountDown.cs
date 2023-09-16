@@ -16,6 +16,7 @@ public class CountdownController : MonoBehaviour
 
     IEnumerator StartCountdown()
     {
+        PauseMenu.isPaused = true;
         yield return new WaitForSeconds(1.0f);
         countdownText.text = "3";
         yield return new WaitForSeconds(countdownDuration);
@@ -29,8 +30,8 @@ public class CountdownController : MonoBehaviour
         countdownText.text = "Go!";
         yield return new WaitForSeconds(countdownDuration);
 
-        // countdownText.gameObject.SetActive(false); // Hide the countdown text
         GameObject.FindGameObjectWithTag("countdown").SetActive(false);
         Time.timeScale = 1.0f;
+        PauseMenu.isPaused = false;
     }
 }

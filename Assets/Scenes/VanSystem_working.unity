@@ -3662,7 +3662,7 @@ GameObject:
   - component: {fileID: 750914945}
   m_Layer: 5
   m_Name: CountDown
-  m_TagString: Untagged
+  m_TagString: countdown
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3701,6 +3701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 1076789897}
+  countdown: {fileID: 0}
   countdownDuration: 1
 --- !u!114 &750914946
 MonoBehaviour:
@@ -4803,6 +4804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 1076789897}
+  countdown: {fileID: 0}
   countdownDuration: 1
 --- !u!1 &1144335930
 GameObject:
