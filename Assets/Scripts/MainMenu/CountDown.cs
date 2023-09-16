@@ -6,6 +6,7 @@ using TMPro;
 public class CountdownController : MonoBehaviour
 {
     public TextMeshProUGUI countdownText;
+    public GameObject countdown;
     public float countdownDuration = 1.0f;
 
     private void Start()
@@ -28,7 +29,8 @@ public class CountdownController : MonoBehaviour
         countdownText.text = "Go!";
         yield return new WaitForSeconds(countdownDuration);
 
-        countdownText.gameObject.SetActive(false); // Hide the countdown text
+        // countdownText.gameObject.SetActive(false); // Hide the countdown text
+        GameObject.FindGameObjectWithTag("countdown").SetActive(false);
         Time.timeScale = 1.0f;
     }
 }
