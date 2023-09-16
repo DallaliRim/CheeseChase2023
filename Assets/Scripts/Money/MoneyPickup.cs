@@ -23,13 +23,37 @@ public class MoneyPickup : MonoBehaviour
     {
         if (other.CompareTag("bluePlayer"))
         {
-            bluePicksUp.Invoke();
-            Destroy(gameObject);
+            if (Manager_Money.moneyPlayerBlueOnHand <= Manager_Money.maxMoneyAmount)
+            {
+                bluePicksUp.Invoke();
+                Destroy(gameObject);
+            }
+            else
+            {
+                // PopUp('blue');
+                Debug.Log("Blue is carrying too much money");
+            }
+
         }
-        if (other.CompareTag("redPlayer"))
+        if (Manager_Money.moneyPlayerRedOnHand <= Manager_Money.maxMoneyAmount)
         {
-            redPicksUp.Invoke();
-            Destroy(gameObject);
+            if (other.CompareTag("redPlayer"))
+            {
+                redPicksUp.Invoke();
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("Red is carrying too much money");
+            }
         }
+
     }
+
+    void PopUp(string playerColor)
+    {
+
+    }
+
 }
+

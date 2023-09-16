@@ -12,6 +12,11 @@ public class Manager_Money : MonoBehaviour
     public int moneyPlayerBlue = 0;
     public int moneyPlayerRed = 0;
 
+    // this is just here so the money gameobjects can tell if max limit has been reached or not. 
+    // should not use this for anything else. Need to use debug.log() to look at their values.
+    public static int moneyPlayerBlueOnHand;
+    public static int moneyPlayerRedOnHand;
+
     [Header("Money players have in vans")]
     public int moneyVanPlayerBlue = 0;
     public int moneyVanPlayerRed = 0;
@@ -26,8 +31,10 @@ public class Manager_Money : MonoBehaviour
     [Header("How much money player should get per second in vault")]
     public int moneyPerSecond;
     [Header("How much money player picks up per money object collected")]
+    public int moneyAmount = 5000;
 
-    public int moneyAmount;
+    [Header("How much money a player can carry at a time.")]
+    public static int maxMoneyAmount = 10000;
 
     void Update()
     {
@@ -36,6 +43,10 @@ public class Manager_Money : MonoBehaviour
 
         moneyInVanBlue.text = "Collected: " + moneyVanPlayerBlue.ToString();
         moneyInVanRed.text = "Collected: " + moneyVanPlayerRed.ToString();
+
+        // so the 2 can be in sync
+        moneyPlayerBlueOnHand = moneyPlayerBlue;
+        moneyPlayerRedOnHand = moneyPlayerRed;
     }
 
 
