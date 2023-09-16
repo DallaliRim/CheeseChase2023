@@ -29,7 +29,7 @@ public class MainMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("MoneyVault");
+            SceneManager.LoadScene("VanSystem_working");
         }
     }
 }
