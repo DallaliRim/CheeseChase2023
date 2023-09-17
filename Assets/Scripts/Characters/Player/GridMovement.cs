@@ -1,5 +1,12 @@
 using UnityEngine;
 
+public enum PlayerStatus
+{
+    InGame,
+    Escaped,
+    InJail
+}
+
 public class GridMovement : MonoBehaviour
 {
     public PlayerStatus playerStatus = PlayerStatus.InGame;
@@ -19,11 +26,16 @@ public class GridMovement : MonoBehaviour
     public KeyCode keyD = KeyCode.S;
     public KeyCode keyL = KeyCode.A;
     public KeyCode keyR = KeyCode.D;
+    public KeyCode keyUse = KeyCode.E;
+
+    private bool _isInVan = false;
 
     void Start() { }
 
     void Update()
     {
+        if (this.playerStatus != PlayerStatus.InGame) return;
+
         if (Input.GetKeyDown(this.keyU))
         {
             this.Move(Vector3.up);
@@ -40,6 +52,18 @@ public class GridMovement : MonoBehaviour
         {
             this.Move(Vector3.right);
         }
+        else if (Input.GetKeyDown(this.keyUse))
+        {
+            this.TryExitVan();
+        }
+    }
+
+    private void TryExitVan()
+    {
+        if (!this._isInVan) return;
+        if (BeatManager.Instance.Audio.time < 1) return;
+
+        this.playerStatus = PlayerStatus.Escaped;
     }
 
     private void Move(Vector3 dir)
@@ -100,11 +124,19 @@ public class GridMovement : MonoBehaviour
         }
     }
 
-}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("van"))
+        {
+            this._isInVan = true;
+        }
+    }
 
-public enum PlayerStatus 
-{
-    InGame, 
-    Escaped,
-    InJail
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("van"))
+        {
+            this._isInVan = false;
+        }
+    }
 }
