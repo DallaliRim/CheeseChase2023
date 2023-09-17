@@ -8736,7 +8736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1652950951
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10471,6 +10471,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1046535071976893630, guid: 81182e7bef76dc340934194069d9e31d, type: 3}
+      propertyPath: m_TagString
+      value: van
+      objectReference: {fileID: 0}
     - target: {fileID: 5313527235856707316, guid: 81182e7bef76dc340934194069d9e31d, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -10700,6 +10704,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 866829805}
+    - target: {fileID: 7078283331268874220, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
+      propertyPath: keyUse
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 7078283331268874220, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
       propertyPath: MoneyManager
       value: 
