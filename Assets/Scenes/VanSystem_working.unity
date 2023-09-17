@@ -10930,7 +10930,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 866829805}
     - target: {fileID: 7078283331268874220, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
-<<<<<<< HEAD
       propertyPath: keyUse
       value: 13
       objectReference: {fileID: 0}
@@ -10938,7 +10937,6 @@ PrefabInstance:
       propertyPath: gameOver
       value: 
       objectReference: {fileID: 1652950954}
-=======
       propertyPath: anim
       value: 
       objectReference: {fileID: 0}
@@ -10958,7 +10956,6 @@ PrefabInstance:
       propertyPath: backward
       value: 
       objectReference: {fileID: 7400000, guid: 39e377dd18f8d514e93460f4b80b915e, type: 2}
->>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
     - target: {fileID: 7078283331268874220, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
       propertyPath: MoneyManager
       value: 
