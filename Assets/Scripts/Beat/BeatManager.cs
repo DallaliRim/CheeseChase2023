@@ -62,13 +62,17 @@ public class BeatManager : MonoBehaviour
 
     private void Update()
     {
-        this._beatPrevious = this.Beat;
-        this.Beat = this.ComputeBeatAt(this.Audio.time);
-
-        if (this.Beat.beatRounded != this._beatPrevious.beatRounded)
+        if (!PauseMenu.isPaused)
         {
-            this.OnBeat.Invoke(this.Beat);
+            this._beatPrevious = this.Beat;
+            this.Beat = this.ComputeBeatAt(this.Audio.time);
+
+            if (this.Beat.beatRounded != this._beatPrevious.beatRounded)
+            {
+                this.OnBeat.Invoke(this.Beat);
+            }
         }
+
     }
 
     private Beat ComputeBeatAt(float time)
