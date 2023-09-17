@@ -1,12 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.UIElements;
-
-public enum PlayerColor
-{
-    Red,
-    Blue,
-}
 
 public class GridMovement : MonoBehaviour
 {
@@ -14,7 +6,6 @@ public class GridMovement : MonoBehaviour
     public float GridSize = 1;
 
     public LayerMask LayerMask;
-    public PlayerColor PlayerColor;
 
     public KeyCode keyU = KeyCode.W;
     public KeyCode keyD = KeyCode.S;
@@ -94,13 +85,14 @@ public class GridMovement : MonoBehaviour
 
     private void SpillMoney(int money)
     {
-        switch (this.PlayerColor)
+        Debug.Log(this.gameObject.tag);
+        switch (this.gameObject.tag)
         {
-            case PlayerColor.Red:
-                this.MoneyManager.moneyPlayerRed -= money;
-                break;
-            case PlayerColor.Blue:
+            case "bluePlayer":
                 this.MoneyManager.moneyPlayerBlue -= money;
+                break;
+            case "redPlayer":
+                this.MoneyManager.moneyPlayerRed -= money;
                 break;
         }
     }
