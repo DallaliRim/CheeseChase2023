@@ -40,9 +40,9 @@ public class PathFinding : MonoBehaviour
             NavMeshPath newPath = new();
             agent.CalculatePath(target, newPath);
             Vector2 relativeVector = newPath.corners[1] - newPath.corners[0];
-            Debug.Log(relativeVector.x);
-            Debug.Log(relativeVector.y);
-            Debug.Log(agent.nextPosition);
+            // Debug.Log(relativeVector.x);
+            // Debug.Log(relativeVector.y);
+            // Debug.Log(agent.nextPosition);
             int sign;
             if (Math.Abs(relativeVector.x) > Math.Abs(relativeVector.y))
             {
