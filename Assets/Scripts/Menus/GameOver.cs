@@ -15,8 +15,8 @@ public class GameOver : MonoBehaviour
     public void setup(bool win)
     {
         gameObject.SetActive(true);
-        redPlayerText.text = win ? $"Red Thief: {moneyManager.moneyPlayerRed} $$" : "";
-        bluePlayerText.text = win ? $"Blue Thief: {moneyManager.moneyPlayerBlue} $$" : "";
+        redPlayerText.text = win ? $"Red Thief: {moneyManager.cheesePlayerRed} $$" : "";
+        bluePlayerText.text = win ? $"Blue Thief: {moneyManager.cheesePlayerBlue} $$" : "";
         result.text = win ? "You Escaped Successfully!" : "You Got Caught. ):";
         gameover.text = win ? "HEIST COMPLETE" : "GAME OVER";
     }

@@ -249,8 +249,7 @@ GameObject:
   - component: {fileID: 5171842038419631689}
   - component: {fileID: 5217819609020288731}
   - component: {fileID: 8824981628081150810}
-  - component: {fileID: 7125561396863202249}
-  - component: {fileID: 3750935556669625103}
+  - component: {fileID: 4041504025307199956}
   - component: {fileID: 63539267899072714}
   m_Layer: 6
   m_Name: TestPlayerRed
@@ -273,7 +272,7 @@ Transform:
   m_Children:
   - {fileID: 9059969130554541581}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5171842038419631689
 SpriteRenderer:
@@ -399,7 +398,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7125561396863202249
+--- !u!114 &4041504025307199956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -408,42 +407,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 8574444702201680499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0f79cd5bef83c94e8391100a7c56ad1, type: 3}
+  m_Script: {fileID: 11500000, guid: 70f3f7e0fb213d54090ed71990509fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
+  MoneyManager: {fileID: 0}
+  GridSize: 1
+  LayerMask:
     serializedVersion: 2
     m_Bits: 68
-  moneyManager: {fileID: 0}
-  gridSize: 1
-  notifyPolice:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PathFinding, Assembly-CSharp
-        m_MethodName: SetTargetPosition
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
---- !u!114 &3750935556669625103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8574444702201680499}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c582c5bcf712c5e4ebae1b23b8e21acc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snap: 1
+  PlayerColor: 0
+  keyU: 119
+  keyD: 115
+  keyL: 97
+  keyR: 100
+  PrecisionGood: 0.15
+  PrecisionOk: 0.2
 --- !u!114 &63539267899072714
 MonoBehaviour:
   m_ObjectHideFlags: 0
