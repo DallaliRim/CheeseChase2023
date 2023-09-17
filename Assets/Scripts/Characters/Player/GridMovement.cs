@@ -5,8 +5,8 @@ public class GridMovement : MonoBehaviour
     private const float PRECISION_GOOD = 0.15f;
     private const float PRECISION_OK = 0.2f;
 
-    private const int SPILL_OK = 2000;
-    private const int SPILL_OUT_OF_BEAT = 4000;
+    private const int SPILL_OK = 1;
+    private const int SPILL_OUT_OF_BEAT = 2;
 
     public Manager_Money MoneyManager;
     public float GridSize = 1;
@@ -43,7 +43,6 @@ public class GridMovement : MonoBehaviour
     private void Move(Vector3 dir)
     {
         bool isOnBeat = BeatManager.Instance.IsOnBeat(PRECISION_GOOD);
-        Debug.Log(isOnBeat);
 
         if (!isOnBeat)
         {
@@ -88,14 +87,13 @@ public class GridMovement : MonoBehaviour
 
     private void SpillMoney(int money)
     {
-        Debug.Log(this.gameObject.tag);
         switch (this.gameObject.tag)
         {
             case "bluePlayer":
-                this.MoneyManager.moneyPlayerBlue -= money;
+                this.MoneyManager.cheesePlayerBlue -= money;
                 break;
             case "redPlayer":
-                this.MoneyManager.moneyPlayerRed -= money;
+                this.MoneyManager.cheesePlayerRed -= money;
                 break;
         }
     }
