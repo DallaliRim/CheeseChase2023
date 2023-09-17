@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -14,6 +11,11 @@ public class GameOver : MonoBehaviour
     public Manager_Money moneyManager;
     public GridMovement player1;
     public GridMovement player2;
+
+    public void Start()
+    {
+        gameObject.SetActive(false);
+    }
 
     public void ShowEndScreen(bool win)
     {
