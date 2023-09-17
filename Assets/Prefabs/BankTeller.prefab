@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4998662538934909747}
   - component: {fileID: -3557991801495594454}
   - component: {fileID: 7052103260963813512}
+  - component: {fileID: 5773897170665625579}
   m_Layer: 0
   m_Name: BankTeller
   m_TagString: Untagged
@@ -113,3 +114,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2000
   maxDistance: 1
+--- !u!208 &5773897170665625579
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867771136060926821}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

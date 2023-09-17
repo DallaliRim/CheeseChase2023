@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UIElements;
 
 public readonly struct Beat
 {
@@ -35,6 +34,20 @@ public class BeatManager : MonoBehaviour
 
     private float BeatDuration => 60.0f / this.Bpm / (this.SignatureBottom / 4);
 
+    public bool IsOnBeat(float Precision)
+    {
+        return this.Audio.time > 0 && IsCloseToInt(this.Beat.beatPrecise, Precision);
+    }
+
+    public float TimeLeft => this.Audio.clip.length - this.Audio.time;
+
+    private static bool IsCloseToInt(float f, float precision)
+    {
+        return
+            Mathf.Abs(f - Mathf.Floor(f)) < precision
+            || Mathf.Abs(f - Mathf.Ceil(f)) < precision;
+    }
+
     private void Awake()
     {
         if (Instance == null)
@@ -51,13 +64,17 @@ public class BeatManager : MonoBehaviour
 
     private void Update()
     {
-        this._beatPrevious = this.Beat;
-        this.Beat = this.ComputeBeatAt(this.Audio.time);
-
-        if (this.Beat.beatRounded != this._beatPrevious.beatRounded)
+        if (!PauseMenu.isPaused)
         {
-            this.OnBeat.Invoke(this.Beat);
+            this._beatPrevious = this.Beat;
+            this.Beat = this.ComputeBeatAt(this.Audio.time);
+
+            if (this.Beat.beatRounded != this._beatPrevious.beatRounded)
+            {
+                this.OnBeat.Invoke(this.Beat);
+            }
         }
+
     }
 
     private Beat ComputeBeatAt(float time)
