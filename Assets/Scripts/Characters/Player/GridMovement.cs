@@ -62,7 +62,7 @@ public class GridMovement : MonoBehaviour
     private void TryExitVan()
     {
         if (!this._isInVan) return;
-        if (BeatManager.Instance.Audio.time < 30) return;
+        //if (BeatManager.Instance.Audio.time < 30) return;
 
         this.playerStatus = PlayerStatus.Escaped;
         gameOver.CheckGameEnd();
