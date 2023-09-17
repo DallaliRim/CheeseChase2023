@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class GridMovement : MonoBehaviour
 {
+    private const float PRECISION_GOOD = 0.15f;
+    private const float PRECISION_OK = 0.2f;
+
+    private const int SPILL_OK = 2000;
+    private const int SPILL_OUT_OF_BEAT = 4000;
+
     public Manager_Money MoneyManager;
     public float GridSize = 1;
 
@@ -11,9 +17,6 @@ public class GridMovement : MonoBehaviour
     public KeyCode keyD = KeyCode.S;
     public KeyCode keyL = KeyCode.A;
     public KeyCode keyR = KeyCode.D;
-
-    public float PrecisionGood = 0.15f;
-    public float PrecisionOk = 0.2f;
 
     void Start() { }
 
@@ -39,13 +42,13 @@ public class GridMovement : MonoBehaviour
 
     private void Move(Vector3 dir)
     {
-        bool isOnBeat = BeatManager.Instance.IsOnBeat(this.PrecisionGood);
+        bool isOnBeat = BeatManager.Instance.IsOnBeat(PRECISION_GOOD);
         Debug.Log(isOnBeat);
 
         if (!isOnBeat)
         {
-            isOnBeat = BeatManager.Instance.IsOnBeat(this.PrecisionOk);
-            this.SpillMoney(2000);
+            isOnBeat = BeatManager.Instance.IsOnBeat(PRECISION_OK);
+            this.SpillMoney(SPILL_OK);
         }
 
         if (isOnBeat)
@@ -62,7 +65,7 @@ public class GridMovement : MonoBehaviour
         }
         else
         {
-            this.SpillMoney(4000);
+            this.SpillMoney(SPILL_OUT_OF_BEAT);
         }
     }
 
