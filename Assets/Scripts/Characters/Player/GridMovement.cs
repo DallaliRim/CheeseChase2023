@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum PlayerStatus
@@ -9,6 +10,13 @@ public enum PlayerStatus
 
 public class GridMovement : MonoBehaviour
 {
+    public Animator playerAnimator;
+    // public Animation anim;
+    // public AnimationClip forward;
+    // public AnimationClip backward;
+    // public AnimationClip left;
+    // public AnimationClip right;
+
     public PlayerStatus playerStatus = PlayerStatus.InGame;
 
     private const float PRECISION_GOOD = 0.15f;
@@ -34,23 +42,34 @@ public class GridMovement : MonoBehaviour
 
     void Update()
     {
+
         if (this.playerStatus != PlayerStatus.InGame) return;
 
         if (Input.GetKeyDown(this.keyU))
         {
             this.Move(Vector3.up);
+            playerAnimator.SetInteger("AnimInt", 1);
         }
         else if (Input.GetKeyDown(this.keyD))
         {
             this.Move(Vector3.down);
+            playerAnimator.SetInteger("AnimInt", 2);
+
+
         }
         else if (Input.GetKeyDown(this.keyL))
         {
             this.Move(Vector3.left);
+            playerAnimator.SetInteger("AnimInt", 3);
+
+
         }
         else if (Input.GetKeyDown(this.keyR))
         {
             this.Move(Vector3.right);
+            playerAnimator.SetInteger("AnimInt", 4);
+
+
         }
         else if (Input.GetKeyDown(this.keyUse))
         {
