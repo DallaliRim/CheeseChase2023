@@ -45,12 +45,12 @@ public class Manager_Money : MonoBehaviour
 
     public void BluePicksUp()
     {
-        cheesePlayerBlue += cheeseAmount;
+        cheesePlayerBlue = cheeseAmount;
     }
 
     public void RedPicksUp()
     {
-        cheesePlayerRed += cheeseAmount;
+        cheesePlayerRed = cheeseAmount;
     }
 
     public void BlueDeposits()

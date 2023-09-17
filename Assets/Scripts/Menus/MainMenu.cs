@@ -7,11 +7,10 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("VanSystem_working");
-        
+        SceneManager.LoadScene("Bank");
     }
 
-    public void GoToSettingsMenu() 
+    public void GoToSettingsMenu()
     {
         SceneManager.LoadScene("SettingsMenu");
     }
