@@ -39,6 +39,8 @@ public class BeatManager : MonoBehaviour
 
     public bool IsOnBeat { get => IsCloseToInt(this.Beat.beatPrecise, this.Precision); }
 
+    public float TimeLeft => this.Audio.clip.length - this.Audio.time;
+
     private static bool IsCloseToInt(float f, float precision)
     {
         return
