@@ -19,6 +19,6 @@ public class TimeLeft : MonoBehaviour
         int minute = (int)(time / 60);
         int seconds = (int)(time % 60);
         timeText.text = $"Time: {minute}:{(seconds < 10 ? "0" + seconds : seconds)}";
-        Debug.Log(timeText.text);
+        //Debug.Log(timeText.text);
     }
 }
