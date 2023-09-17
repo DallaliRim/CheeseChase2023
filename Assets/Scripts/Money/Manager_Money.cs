@@ -5,67 +5,64 @@ public class Manager_Money : MonoBehaviour
 {
 
     [Header("Money the players are holding")]
-    public int moneyPlayerBlue = 0;
-    public int moneyPlayerRed = 0;
+    public int cheesePlayerBlue = 0;
+    public int cheesePlayerRed = 0;
 
     // this is just here so the money gameobjects can tell if max limit has been reached or not. 
     // should not use this for anything else. Need to use debug.log() to look at their values.
-    public static int moneyPlayerBlueOnHand;
-    public static int moneyPlayerRedOnHand;
+    public static int cheesePlayerBlueStatic;
+    public static int cheesePlayerRedStatic;
 
     [Header("Money players have in vans")]
-    public int moneyVanPlayerBlue = 0;
-    public int moneyVanPlayerRed = 0;
+    public int cheeseVanPlayerBlue = 0;
+    public int cheeseVanPlayerRed = 0;
 
     [Header("References to the money UI")]
-    public TextMeshProUGUI moneyTextBlue;
-    public TextMeshProUGUI moneyTextRed;
+    public TextMeshProUGUI cheesePlayerBlueText;
+    public TextMeshProUGUI cheesePlayerRedText;
 
-    public TextMeshProUGUI moneyInVanRed;
-    public TextMeshProUGUI moneyInVanBlue;
+    public TextMeshProUGUI cheeseVanBlueText;
+    public TextMeshProUGUI cheeseVanRedText;
 
     [Header("How much money player picks up per money object collected")]
-    public int moneyAmount = 5000;
-
-    [Header("How much money a player can carry at a time.")]
-    public static int maxMoneyAmount = 20000;
+    public int cheeseAmount = 16;
 
     void Update()
     {
-        moneyPlayerBlue = Mathf.Max(moneyPlayerBlue, 0);
-        moneyPlayerRed = Mathf.Max(moneyPlayerRed, 0);
+        cheesePlayerBlue = Mathf.Max(cheesePlayerBlue, 0);
+        cheesePlayerRed = Mathf.Max(cheesePlayerRed, 0);
 
-        moneyTextBlue.text = $"Pocket: {moneyPlayerRed}$";
-        moneyTextRed.text = $"Pocket: {moneyPlayerBlue}$";
+        cheesePlayerBlueText.text = $"Pocket: {cheesePlayerRed} cheese";
+        cheesePlayerRedText.text = $"Pocket: {cheesePlayerBlue} cheese";
 
-        moneyInVanBlue.text = $"Collected: {moneyVanPlayerRed}$";
-        moneyInVanRed.text = $"Collected: {moneyVanPlayerBlue}$";
+        cheeseVanBlueText.text = $"Collected: {cheeseVanPlayerRed} cheese";
+        cheeseVanRedText.text = $"Collected: {cheeseVanPlayerBlue} cheese";
 
         // so the 2 can be in sync
-        moneyPlayerBlueOnHand = moneyPlayerBlue;
-        moneyPlayerRedOnHand = moneyPlayerRed;
+        cheesePlayerBlueStatic = cheesePlayerBlue;
+        cheesePlayerRedStatic = cheesePlayerRed;
     }
 
-    public void BluePicksUpMoney()
+    public void BluePicksUp()
     {
-        moneyPlayerBlue += moneyAmount;
+        cheesePlayerBlue += cheeseAmount;
     }
 
-    public void RedPicksUpMoney()
+    public void RedPicksUp()
     {
-        moneyPlayerRed += moneyAmount;
+        cheesePlayerRed += cheeseAmount;
     }
 
-    public void BlueDepositsMoney()
+    public void BlueDeposits()
     {
-        moneyVanPlayerBlue += moneyPlayerBlue;
-        moneyPlayerBlue = 0;
+        cheeseVanPlayerBlue += cheesePlayerBlue;
+        cheesePlayerBlue = 0;
     }
 
-    public void RedDepositsMoney()
+    public void RedDeposits()
     {
-        moneyVanPlayerRed += moneyPlayerRed;
-        moneyPlayerRed = 0;
+        cheeseVanPlayerRed += cheesePlayerRed;
+        cheesePlayerRed = 0;
     }
 
 }
