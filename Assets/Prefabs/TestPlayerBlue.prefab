@@ -798,18 +798,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f3f7e0fb213d54090ed71990509fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStatus: 0
   MoneyManager: {fileID: 0}
   GridSize: 1
   LayerMask:
     serializedVersion: 2
     m_Bits: 12
-  PlayerColor: 1
   keyU: 273
   keyD: 274
   keyL: 276
   keyR: 275
-  PrecisionGood: 0.15
-  PrecisionOk: 0.2
+  keyUse: 13
 --- !u!1 &8506416517966925625
 GameObject:
   m_ObjectHideFlags: 0
