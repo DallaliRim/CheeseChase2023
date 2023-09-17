@@ -1461,7 +1461,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -288072915
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0.99777603, b: 0, a: 1}
@@ -4024,7 +4024,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -288072915
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0.99777603, b: 0, a: 1}
@@ -6418,7 +6418,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -288072915
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0.99777603, b: 0, a: 1}
@@ -10121,6 +10121,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e47b79a42a90914fa606a4a24db67ec, type: 3}
+--- !u!95 &1953060179 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7827117474129605157, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
+  m_PrefabInstance: {fileID: 4142085938598305302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1997736220
 GameObject:
   m_ObjectHideFlags: 0
@@ -10793,10 +10798,18 @@ PrefabInstance:
       propertyPath: MoneyManager
       value: 
       objectReference: {fileID: 1792256938}
+    - target: {fileID: 4041504025307199956, guid: 2e2d93a0e7e980d4680151cb2b69ad28, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 8502851609749632004}
     - target: {fileID: 4439742398039937791, guid: 2e2d93a0e7e980d4680151cb2b69ad28, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 866829805}
+    - target: {fileID: 5171842038419631689, guid: 2e2d93a0e7e980d4680151cb2b69ad28, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1887750329, guid: f5051bf7e5716b6409c353b904c0e4ae, type: 3}
     - target: {fileID: 7125561396863202249, guid: 2e2d93a0e7e980d4680151cb2b69ad28, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -10836,6 +10849,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8574444702201680499, guid: 2e2d93a0e7e980d4680151cb2b69ad28, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8502851609749631998}
+    - targetCorrespondingSourceObject: {fileID: 8574444702201680499, guid: 2e2d93a0e7e980d4680151cb2b69ad28, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8502851609749632004}
   m_SourcePrefab: {fileID: 100100000, guid: 2e2d93a0e7e980d4680151cb2b69ad28, type: 3}
 --- !u!1001 &4142085938598305302
 PrefabInstance:
@@ -10889,6 +10905,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4566874913337842736, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566874913337842736, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566874913337842736, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6310354965947946475, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
       propertyPath: moneyManager
       value: 
@@ -10902,6 +10930,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 866829805}
     - target: {fileID: 7078283331268874220, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
+<<<<<<< HEAD
       propertyPath: keyUse
       value: 13
       objectReference: {fileID: 0}
@@ -10909,10 +10938,43 @@ PrefabInstance:
       propertyPath: gameOver
       value: 
       objectReference: {fileID: 1652950954}
+=======
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078283331268874220, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
+      propertyPath: left
+      value: 
+      objectReference: {fileID: 7400000, guid: a63987adf6d7b324b8647195e388e69a, type: 2}
+    - target: {fileID: 7078283331268874220, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
+      propertyPath: right
+      value: 
+      objectReference: {fileID: 7400000, guid: 558e32dad1d30654eb9b67af4733e5a8, type: 2}
+    - target: {fileID: 7078283331268874220, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
+      propertyPath: forward
+      value: 
+      objectReference: {fileID: 7400000, guid: c0c3cdff17028b24dad0507603fc5a5f, type: 2}
+    - target: {fileID: 7078283331268874220, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
+      propertyPath: backward
+      value: 
+      objectReference: {fileID: 7400000, guid: 39e377dd18f8d514e93460f4b80b915e, type: 2}
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
     - target: {fileID: 7078283331268874220, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
       propertyPath: MoneyManager
       value: 
       objectReference: {fileID: 1792256938}
+    - target: {fileID: 7078283331268874220, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 1953060179}
+    - target: {fileID: 7827117474129605157, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ba6dd15f873ac5b4f9b965b6b893e25a, type: 2}
+    - target: {fileID: 7827117474129605157, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8502851609428119829, guid: 97dd141421ea51541addefd5b2fd4e3c, type: 3}
       propertyPath: m_Name
       value: TestPlayerBlue
@@ -10956,3 +11018,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f3f7e0fb213d54090ed71990509fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &8502851609749632004
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8502851609749631986}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 484d3af180598f445a45dd00da312b2e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

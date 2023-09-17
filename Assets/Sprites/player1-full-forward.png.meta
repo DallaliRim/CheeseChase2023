@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: cf7b298e89d05484692092d0385694be
 =======
 guid: efe1c636ec551c9498e6b2997f923f23
 >>>>>>> 1e9756b09c1d9a73f79dde97221331141699fc5a
+=======
+guid: efe1c636ec551c9498e6b2997f923f23
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -39,10 +43,14 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     filterMode: 1
 =======
     filterMode: 0
 >>>>>>> 1e9756b09c1d9a73f79dde97221331141699fc5a
+=======
+    filterMode: 0
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -52,6 +60,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
 <<<<<<< HEAD
+<<<<<<< HEAD
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
@@ -59,13 +68,18 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
 =======
+=======
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
   spriteMode: 2
   spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
+<<<<<<< HEAD
 >>>>>>> 1e9756b09c1d9a73f79dde97221331141699fc5a
+=======
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -90,10 +104,14 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
 <<<<<<< HEAD
+<<<<<<< HEAD
     textureCompression: 1
 =======
     textureCompression: 0
 >>>>>>> 1e9756b09c1d9a73f79dde97221331141699fc5a
+=======
+    textureCompression: 0
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -175,8 +193,11 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     sprites: []
 =======
+=======
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
     sprites:
     - serializedVersion: 2
       name: player1-full-forward_0
@@ -262,7 +283,10 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+<<<<<<< HEAD
 >>>>>>> 1e9756b09c1d9a73f79dde97221331141699fc5a
+=======
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
     outline: []
     physicsShape: []
     bones: []
@@ -274,14 +298,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
 <<<<<<< HEAD
+<<<<<<< HEAD
     nameFileIdTable: {}
 =======
+=======
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
     nameFileIdTable:
       player1-full-forward_0: 1725609399
       player1-full-forward_1: 322193
       player1-full-forward_2: -1132873618
       player1-full-forward_3: -257521838
+<<<<<<< HEAD
 >>>>>>> 1e9756b09c1d9a73f79dde97221331141699fc5a
+=======
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
