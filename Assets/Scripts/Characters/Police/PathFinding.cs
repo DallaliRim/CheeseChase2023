@@ -5,8 +5,9 @@ using UnityEngine;
 using UnityEngine.AI;
 public class PathFinding : MonoBehaviour
 {
-    private Vector2 target;
     NavMeshAgent agent;
+    private GameObject red;
+    private GameObject blue;
 
     void Awake()
     {
@@ -14,35 +15,27 @@ public class PathFinding : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         agent.ResetPath();
+        red = GameObject.FindGameObjectWithTag("redPlayer");
+        blue = GameObject.FindGameObjectWithTag("bluePlayer");
     }
-    // Start is called before the first frame update
     void Start()
     {
-    }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        SetAgentPosition();
     }
 
     void Update()
     {
-        SetTargetPosition();
+
     }
 
-    void SetTargetPosition()
+    public void Move()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            target = new(Mathf.RoundToInt(target.x), Mathf.RoundToInt(target.y));
-        }
-    }
+        Vector2 target =
+            Vector2.Distance(red.transform.position, transform.position) < Vector2.Distance(transform.position, blue.transform.position)
+            ? red.transform.position
+            : blue.transform.position;
 
-    void SetAgentPosition()
-    {
-        if ((Vector2)transform.position != target)
+        if (Vector2.Distance(transform.position, target) != 0)
         {
             NavMeshPath newPath = new();
             agent.CalculatePath(target, newPath);

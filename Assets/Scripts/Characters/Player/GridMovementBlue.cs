@@ -1,30 +1,40 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GridMovementBlue : MonoBehaviour
 {
     public LayerMask layerMask;
     public Manager_Money moneyManager;
     public float gridSize;
+    private BeatManager beatManager;
+
+    void Start()
+    {
+        beatManager = BeatManager.Instance;
+    }
 
     void Update()
     {
         if (!PauseMenu.isPaused)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow) && !HitRaycast(Vector2.up))
+            if (beatManager.IsOnBeat)
             {
-                transform.Translate(Vector2.up * gridSize);
-            }
-            if (Input.GetKeyDown(KeyCode.DownArrow) && !HitRaycast(Vector2.up))
-            {
-                transform.Translate(Vector2.down * gridSize);
-            }
-            if (Input.GetKeyDown(KeyCode.RightArrow) && !HitRaycast(Vector2.up))
-            {
-                transform.Translate(Vector2.right * gridSize);
-            }
-            if (Input.GetKeyDown(KeyCode.LeftArrow) && !HitRaycast(Vector2.up))
-            {
-                transform.Translate(Vector2.left * gridSize);
+                if (Input.GetKeyDown(KeyCode.UpArrow) && !HitRaycast(Vector2.up))
+                {
+                    transform.Translate(Vector2.up * gridSize);
+                }
+                else if (Input.GetKeyDown(KeyCode.DownArrow) && !HitRaycast(Vector2.down))
+                {
+                    transform.Translate(Vector2.down * gridSize);
+                }
+                else if (Input.GetKeyDown(KeyCode.RightArrow) && !HitRaycast(Vector2.right))
+                {
+                    transform.Translate(Vector2.right * gridSize);
+                }
+                else if (Input.GetKeyDown(KeyCode.LeftArrow) && !HitRaycast(Vector2.left))
+                {
+                    transform.Translate(Vector2.left * gridSize);
+                }
             }
         }
 
