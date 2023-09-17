@@ -7,7 +7,7 @@ public class PathFinding : MonoBehaviour
     private GameObject red;
     private GameObject blue;
 
-    void Awake()
+    void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
@@ -15,10 +15,8 @@ public class PathFinding : MonoBehaviour
         agent.ResetPath();
         red = GameObject.FindGameObjectWithTag("redPlayer");
         blue = GameObject.FindGameObjectWithTag("bluePlayer");
-    }
-    void Start()
-    {
 
+        BeatManager.Instance.OnBeat.AddListener(Move);
     }
 
     void Update()
@@ -26,7 +24,7 @@ public class PathFinding : MonoBehaviour
 
     }
 
-    public void Move()
+    public void Move(Beat beat)
     {
         Vector2 target =
             Vector2.Distance(red.transform.position, transform.position) < Vector2.Distance(transform.position, blue.transform.position)
