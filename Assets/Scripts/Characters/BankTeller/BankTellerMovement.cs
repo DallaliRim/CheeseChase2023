@@ -8,6 +8,8 @@ public class BankTellerMovement : MonoBehaviour
     private Vector2 startingPosition;
     private bool centered;
 
+    public Animator anim;
+
     private void Start()
     {
         startingPosition = transform.position;
@@ -22,10 +24,26 @@ public class BankTellerMovement : MonoBehaviour
             if (Random.value < 0.5f)
             {
                 randomDirection.x = Random.Range(-1f, 1f);
+                if (randomDirection.x > 0)
+                {
+                    anim.SetInteger("AnimInt", 4);
+                }
+                else
+                {
+                    anim.SetInteger("AnimInt", 3);
+                }
             }
             else
             {
                 randomDirection.y = Random.Range(-1f, 1f);
+                if (randomDirection.y > 0)
+                {
+                    anim.SetInteger("AnimInt", 2);
+                }
+                else
+                {
+                    anim.SetInteger("AnimInt", 1);
+                }
             }
 
             Vector2 newPosition = (Vector2)transform.position + randomDirection.normalized * moveSpeed * Time.deltaTime;
