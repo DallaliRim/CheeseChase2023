@@ -59,11 +59,11 @@ TagManager:
   - name: Player
     uniqueID: 4006894381
     locked: 0
-  - name: WallsTOP
-    uniqueID: 2823515531
-    locked: 0
   - name: FurnituresALWAYSINFRONT
     uniqueID: 1815107319
+    locked: 0
+  - name: WallsTOP
+    uniqueID: 2823515531
     locked: 0
   - name: Van
     uniqueID: 2912799537
