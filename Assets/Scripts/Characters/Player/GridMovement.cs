@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class GridMovement : MonoBehaviour
 {
+    public PlayerStatus playerStatus = PlayerStatus.InGame;
+
     private const float PRECISION_GOOD = 0.15f;
     private const float PRECISION_OK = 0.2f;
 
@@ -98,4 +100,11 @@ public class GridMovement : MonoBehaviour
         }
     }
 
+}
+
+public enum PlayerStatus 
+{
+    InGame, 
+    Escaped,
+    InJail
 }
