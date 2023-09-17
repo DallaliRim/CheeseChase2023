@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
 guid: d1ed37cb9455e0942bfd159ad655cbc6
+=======
+guid: da625c44e917f27449d7972d846dad2a
+>>>>>>> 1e9756b09c1d9a73f79dde97221331141699fc5a
+=======
+guid: da625c44e917f27449d7972d846dad2a
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +42,15 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
     filterMode: 1
+=======
+    filterMode: 0
+>>>>>>> 1e9756b09c1d9a73f79dde97221331141699fc5a
+=======
+    filterMode: 0
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +59,27 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< HEAD
+<<<<<<< HEAD
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
+=======
+=======
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+<<<<<<< HEAD
+>>>>>>> 1e9756b09c1d9a73f79dde97221331141699fc5a
+=======
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +103,15 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+<<<<<<< HEAD
+<<<<<<< HEAD
     textureCompression: 1
+=======
+    textureCompression: 0
+>>>>>>> 1e9756b09c1d9a73f79dde97221331141699fc5a
+=======
+    textureCompression: 0
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -153,7 +192,101 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
     sprites: []
+=======
+=======
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
+    sprites:
+    - serializedVersion: 2
+      name: player2-full-backward_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc81e80480a65cf4cb7ab5f81555224b
+      internalID: 1288812233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player2-full-backward_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbce5bf8b5f670f41b8f523449767ce8
+      internalID: -729248335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player2-full-backward_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d7859b5126f97e48a1fa6f08e5b1d68
+      internalID: -1614745386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player2-full-backward_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2492d85378d7c5344aefa1b7db92c709
+      internalID: -142010556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+<<<<<<< HEAD
+>>>>>>> 1e9756b09c1d9a73f79dde97221331141699fc5a
+=======
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
     outline: []
     physicsShape: []
     bones: []
@@ -164,7 +297,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+<<<<<<< HEAD
+<<<<<<< HEAD
     nameFileIdTable: {}
+=======
+=======
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
+    nameFileIdTable:
+      player2-full-backward_0: 1288812233
+      player2-full-backward_1: -729248335
+      player2-full-backward_2: -1614745386
+      player2-full-backward_3: -142010556
+<<<<<<< HEAD
+>>>>>>> 1e9756b09c1d9a73f79dde97221331141699fc5a
+=======
+>>>>>>> 712c0214efab8838c9e37b370d33e7f9ca31c74c
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

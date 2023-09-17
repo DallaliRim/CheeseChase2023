@@ -9,8 +9,8 @@ public class GameOver : MonoBehaviour
     public TextMeshProUGUI result;
     public TextMeshProUGUI gameover;
     public Manager_Money moneyManager;
-    public GridMovement player1;
-    public GridMovement player2;
+    public GridMovement playerRed;
+    public GridMovement playerBlue;
 
     public void Start()
     {
@@ -19,19 +19,23 @@ public class GameOver : MonoBehaviour
 
     public void ShowEndScreen(bool win)
     {
-        gameObject.SetActive(true);
-        redPlayerText.text = win ? $"Red Thief: {moneyManager.cheesePlayerRed} $$" : "";
-        bluePlayerText.text = win ? $"Blue Thief: {moneyManager.cheesePlayerBlue} $$" : "";
+        int red = moneyManager.cheesePlayerRed + moneyManager.cheeseVanPlayerRed;
+        int blue = moneyManager.cheesePlayerBlue + moneyManager.cheeseVanPlayerBlue;
+
+        redPlayerText.text = win ? $"Red Thief: {red} cheeses" : "";
+        bluePlayerText.text = win ? $"Blue Thief: {blue} cheeses" : "";
         result.text = win ? "You Escaped Successfully!" : "You Got Caught. ):";
         gameover.text = win ? "HEIST COMPLETE" : "GAME OVER";
+        gameObject.SetActive(true);
+        PauseMenu.isPaused = true;
     }
 
     public void CheckGameEnd() 
     {
-        if(player1.playerStatus == PlayerStatus.InJail && player2.playerStatus == PlayerStatus.InJail)
+        if(playerRed.playerStatus == PlayerStatus.InJail && playerBlue.playerStatus == PlayerStatus.InJail)
         {
             ShowEndScreen(false);
-        } else if (player1.playerStatus != PlayerStatus.InGame && player2.playerStatus != PlayerStatus.InGame)
+        } else if (playerRed.playerStatus != PlayerStatus.InGame && playerBlue.playerStatus != PlayerStatus.InGame)
         {
             ShowEndScreen(true);
         }
@@ -39,6 +43,7 @@ public class GameOver : MonoBehaviour
 
     public void Restart()
     {
+        PauseMenu.isPaused = false;
         SceneManager.LoadScene("MainMenu");
     }
     public void Quit() 
