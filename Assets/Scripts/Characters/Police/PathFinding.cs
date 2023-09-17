@@ -4,8 +4,8 @@ using UnityEngine.AI;
 public class PathFinding : MonoBehaviour
 {
     NavMeshAgent agent;
-    private GameObject red;
-    private GameObject blue;
+    private GridMovement red;
+    private GridMovement blue;
 
     void Awake()
     {
@@ -13,8 +13,8 @@ public class PathFinding : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         agent.ResetPath();
-        red = GameObject.FindGameObjectWithTag("redPlayer");
-        blue = GameObject.FindGameObjectWithTag("bluePlayer");
+        red = GameObject.FindGameObjectWithTag("redPlayer").GetComponent<GridMovement>();
+        blue = GameObject.FindGameObjectWithTag("bluePlayer").GetComponent<GridMovement>();
     }
     void Start()
     {
@@ -28,15 +28,19 @@ public class PathFinding : MonoBehaviour
 
     public void Move()
     {
-        Vector2 target =
-            Vector2.Distance(red.transform.position, transform.position) < Vector2.Distance(transform.position, blue.transform.position)
-            ? red.transform.position
-            : blue.transform.position;
 
-        if (Vector2.Distance(transform.position, target) != 0)
+        var distanceRed = red.playerStatus == PlayerStatus.InGame ? Vector2.Distance(red.transform.position, transform.position) : float.PositiveInfinity;
+        var distanceBlue = blue.playerStatus == PlayerStatus.InGame ? Vector2.Distance(blue.transform.position, transform.position) : float.PositiveInfinity;
+
+        var target =
+            distanceRed < distanceBlue
+            ? red
+            : blue;
+
+        if (Vector2.Distance(transform.position, target.transform.position) != 0)
         {
             NavMeshPath newPath = new();
-            agent.CalculatePath(target, newPath);
+            agent.CalculatePath(target.transform.position, newPath);
             Vector2 relativeVector = newPath.corners[1] - newPath.corners[0];
             // Debug.Log(relativeVector.x);
             // Debug.Log(relativeVector.y);
@@ -54,6 +58,10 @@ public class PathFinding : MonoBehaviour
                 // Debug.Log($"y: {transform.position.y} -> {transform.position.y + sign}");
                 transform.position = new Vector3(transform.position.x, (int)transform.position.y + sign, transform.position.z);
             }
+        }
+        else
+        {
+            target.playerStatus = PlayerStatus.InJail;
         }
     }
 }
