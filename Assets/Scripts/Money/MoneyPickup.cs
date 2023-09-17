@@ -14,21 +14,17 @@ public class MoneyPickup : MonoBehaviour
     // depending on which player touches the money
     public UnityEvent bluePicksUp;
     public UnityEvent redPicksUp;
-    private bool _canPickUp = true;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (_canPickUp && other.CompareTag("bluePlayer") && Manager_Money.cheesePlayerBlueStatic == 0)
+        if (other.CompareTag("bluePlayer") && Manager_Money.cheesePlayerBlueStatic == 0)
         {
             bluePicksUp.Invoke();
         }
-        else if (_canPickUp && other.CompareTag("redPlayer") && Manager_Money.cheesePlayerRedStatic == 0)
+        else if (other.CompareTag("redPlayer") && Manager_Money.cheesePlayerRedStatic == 0)
         {
             redPicksUp.Invoke();
         }
-
-        _canPickUp = false;
-        Destroy(gameObject);
     }
 }
 
