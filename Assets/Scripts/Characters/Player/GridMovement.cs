@@ -18,6 +18,7 @@ public class GridMovement : MonoBehaviour
     private const int SPILL_OUT_OF_BEAT = 2;
 
     public Manager_Money MoneyManager;
+    public GameOver gameOver;
     public float GridSize = 1;
 
     public LayerMask LayerMask;
@@ -61,9 +62,10 @@ public class GridMovement : MonoBehaviour
     private void TryExitVan()
     {
         if (!this._isInVan) return;
-        if (BeatManager.Instance.Audio.time < 30) return;
+        //if (BeatManager.Instance.Audio.time < 30) return;
 
         this.playerStatus = PlayerStatus.Escaped;
+        gameOver.CheckGameEnd();
     }
 
     private void Move(Vector3 dir)
