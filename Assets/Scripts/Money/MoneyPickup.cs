@@ -28,7 +28,7 @@ public class MoneyPickup : MonoBehaviour
             else
             {
                 // PopUp('blue');
-                Debug.Log("Blue is carrying too much money");
+                // Debug.Log("Blue is carrying too much money");
             }
         }
         if (Manager_Money.moneyPlayerRedOnHand <= Manager_Money.maxMoneyAmount)
@@ -40,7 +40,7 @@ public class MoneyPickup : MonoBehaviour
             }
             else
             {
-                Debug.Log("Red is carrying too much money");
+                // Debug.Log("Red is carrying too much money");
             }
         }
 

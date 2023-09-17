@@ -32,8 +32,11 @@ public class Manager_Money : MonoBehaviour
 
     void Update()
     {
+        moneyPlayerBlue = Mathf.Max(moneyPlayerBlue, 0);
+        moneyPlayerRed = Mathf.Max(moneyPlayerRed, 0);
+
         moneyTextBlue.text = $"Pocket: {moneyPlayerRed}$";
-        moneyTextRed.text =  $"Pocket: {moneyPlayerBlue}$";
+        moneyTextRed.text = $"Pocket: {moneyPlayerBlue}$";
 
         moneyInVanBlue.text = $"Collected: {moneyVanPlayerRed}$";
         moneyInVanRed.text = $"Collected: {moneyVanPlayerBlue}$";

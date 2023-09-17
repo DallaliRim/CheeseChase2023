@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UIElements;
 
 public readonly struct Beat
 {
@@ -24,7 +22,6 @@ public class BeatManager : MonoBehaviour
 
     public UnityEvent<Beat> OnBeat;
 
-    public float Precision = 0.2f;
     public float Offset = 0.0f;
     public float Bpm = 120;
     public uint SignatureTop = 4;
@@ -37,7 +34,10 @@ public class BeatManager : MonoBehaviour
 
     private float BeatDuration => 60.0f / this.Bpm / (this.SignatureBottom / 4);
 
-    public bool IsOnBeat { get => IsCloseToInt(this.Beat.beatPrecise, this.Precision); }
+    public bool IsOnBeat(float Precision)
+    {
+        return IsCloseToInt(this.Beat.beatPrecise, Precision);
+    }
 
     private static bool IsCloseToInt(float f, float precision)
     {

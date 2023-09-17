@@ -1,39 +1,108 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.UIElements;
+
+public enum PlayerColor
+{
+    Red,
+    Blue,
+}
 
 public class GridMovement : MonoBehaviour
 {
+    public Manager_Money MoneyManager;
+    public float GridSize = 1;
 
-    // THIS IS AN OUTDATED GRID MOVEMENT SCRIPT. SINCE THERE IS 2 PLAYERS, 
-    // USE GRID MOVEMENT BLUE AND GRIDMOVEMENT RED
+    public LayerMask LayerMask;
+    public PlayerColor PlayerColor;
 
-    public float gridSize;
+    public KeyCode keyU = KeyCode.W;
+    public KeyCode keyD = KeyCode.S;
+    public KeyCode keyL = KeyCode.A;
+    public KeyCode keyR = KeyCode.D;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //test
-    }
+    public float PrecisionGood = 0.15f;
+    public float PrecisionOk = 0.2f;
 
-    // Update is called once per frame
+    void Start() { }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(this.keyU))
         {
-            transform.Translate(Vector3.up * gridSize);
+            this.Move(Vector3.up);
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(this.keyD))
         {
-            transform.Translate(Vector3.down * gridSize);
+            this.Move(Vector3.down);
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(this.keyL))
         {
-            transform.Translate(Vector3.right * gridSize);
+            this.Move(Vector3.left);
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(this.keyR))
         {
-            transform.Translate(Vector3.left * gridSize);
+            this.Move(Vector3.right);
         }
     }
+
+    private void Move(Vector3 dir)
+    {
+        bool isOnBeat = BeatManager.Instance.IsOnBeat(this.PrecisionGood);
+        Debug.Log(isOnBeat);
+
+        if (!isOnBeat)
+        {
+            isOnBeat = BeatManager.Instance.IsOnBeat(this.PrecisionOk);
+            this.SpillMoney(2000);
+        }
+
+        if (isOnBeat)
+        {
+            switch (TestHit(dir))
+            {
+                case "bankTeller":
+                    this.SpillMoney(int.MaxValue);
+                    break;
+                default:
+                    this.transform.Translate(dir * this.GridSize);
+                    break;
+            }
+        }
+        else
+        {
+            this.SpillMoney(4000);
+        }
+    }
+
+    private string TestHit(Vector3 dir)
+    {
+        float length = 1f;
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, length, ~LayerMask);
+
+        Debug.DrawRay(transform.position, dir * length, Color.red);
+        if (hit.collider != null)
+        {
+            return hit.collider.gameObject.tag;
+        }
+        else
+        {
+            return "";
+        }
+    }
+
+    private void SpillMoney(int money)
+    {
+        switch (this.PlayerColor)
+        {
+            case PlayerColor.Red:
+                this.MoneyManager.moneyPlayerRed -= money;
+                break;
+            case PlayerColor.Blue:
+                this.MoneyManager.moneyPlayerBlue -= money;
+                break;
+        }
+    }
+
 }
