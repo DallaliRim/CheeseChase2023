@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e100f8a675947074190f917d2faafed4
+guid: 8992cd90510a42746bc9d56ce39505d7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -155,7 +155,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player2-full-left_0
+      name: cop-left_0
       rect:
         serializedVersion: 2
         x: 0
@@ -169,14 +169,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02fddb471d958f945bae773a80e19eac
-      internalID: -945622304
+      spriteID: dcd936e7d0ecbac4f9da0a953e7fc019
+      internalID: 1790649068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player2-full-left_1
+      name: cop-left_1
       rect:
         serializedVersion: 2
         x: 0
@@ -190,14 +190,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36466ccd9211d5a4c83ebb00f0c4b543
-      internalID: -544214627
+      spriteID: 3309a65c7988086409727fdadfc32f89
+      internalID: -1499379155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player2-full-left_2
+      name: cop-left_2
       rect:
         serializedVersion: 2
         x: 0
@@ -211,14 +211,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0be8f25afe642dc4ab464789fa0460b9
-      internalID: -1987114310
+      spriteID: efc342093cae7774d90d40da6f6f555a
+      internalID: 808952890
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player2-full-left_3
+      name: cop-left_3
       rect:
         serializedVersion: 2
         x: 0
@@ -232,8 +232,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ee64c72964229c45bcc4cc7a1731b54
-      internalID: 282457062
+      spriteID: f7c66996f706f7f4a9a36bae2b75ea0d
+      internalID: 1983635836
       vertices: []
       indices: 
       edges: []
@@ -249,10 +249,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      player2-full-left_0: -945622304
-      player2-full-left_1: -544214627
-      player2-full-left_2: -1987114310
-      player2-full-left_3: 282457062
+      cop-left_0: 1790649068
+      cop-left_1: -1499379155
+      cop-left_2: 808952890
+      cop-left_3: 1983635836
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
