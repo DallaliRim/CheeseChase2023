@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Video;
-using UnityEngine.Events;
 
 public class Manager_Money : MonoBehaviour
 {
@@ -37,11 +32,11 @@ public class Manager_Money : MonoBehaviour
 
     void Update()
     {
-        moneyTextBlue.text = "Money: " + moneyPlayerBlue.ToString();
-        moneyTextRed.text = "Money: " + moneyPlayerRed.ToString();
+        moneyTextBlue.text = $"Pocket: {moneyPlayerRed}$";
+        moneyTextRed.text =  $"Pocket: {moneyPlayerBlue}$";
 
-        moneyInVanBlue.text = "Collected: " + moneyVanPlayerBlue.ToString();
-        moneyInVanRed.text = "Collected: " + moneyVanPlayerRed.ToString();
+        moneyInVanBlue.text = $"Collected: {moneyVanPlayerRed}$";
+        moneyInVanRed.text = $"Collected: {moneyVanPlayerBlue}$";
 
         // so the 2 can be in sync
         moneyPlayerBlueOnHand = moneyPlayerBlue;

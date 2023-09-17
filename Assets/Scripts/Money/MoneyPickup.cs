@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -18,7 +16,6 @@ public class MoneyPickup : MonoBehaviour
     public UnityEvent redPicksUp;
 
 
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("bluePlayer"))
@@ -33,7 +30,6 @@ public class MoneyPickup : MonoBehaviour
                 // PopUp('blue');
                 Debug.Log("Blue is carrying too much money");
             }
-
         }
         if (Manager_Money.moneyPlayerRedOnHand <= Manager_Money.maxMoneyAmount)
         {
@@ -49,11 +45,5 @@ public class MoneyPickup : MonoBehaviour
         }
 
     }
-
-    void PopUp(string playerColor)
-    {
-
-    }
-
 }
 

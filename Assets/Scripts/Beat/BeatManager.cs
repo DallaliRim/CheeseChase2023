@@ -1,38 +1,18 @@
 using UnityEngine;
-
-public readonly struct Rhythm
-{
-    public readonly float bpm;
-    public readonly uint signatureTop;
-    public readonly uint signatureBottom;
-
-    public Rhythm(float bpm, uint signatureTop, uint signatureBottom)
-    {
-        this.bpm = bpm;
-        this.signatureTop = signatureTop;
-        this.signatureBottom = signatureBottom;
-    }
-}
-
-public readonly struct Music
-{
-    public readonly Rhythm rhythm;
-
-    public Music(Rhythm rhythm)
-    {
-        this.rhythm = rhythm;
-    }
-}
+using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public readonly struct Beat
 {
     public readonly int bar;
-    public readonly float beat;
+    public readonly float beatPrecise;
+    public readonly int beatRounded;
 
-    public Beat(int bar, float beat)
+    public Beat(int bar, float beatPrecise)
     {
         this.bar = bar;
-        this.beat = beat;
+        this.beatPrecise = beatPrecise;
+        this.beatRounded = Mathf.FloorToInt(beatPrecise);
     }
 }
 
@@ -41,27 +21,19 @@ public class BeatManager : MonoBehaviour
 {
     public static BeatManager Instance { get; private set; }
 
-    public bool Paused = false;
-    public Music? Music { get; set; }
+    public UnityEvent<Beat> OnBeat;
 
-    public Beat Beat { get; private set; }
+    public float Offset = 0.0f;
+    public float Bpm = 120;
+    public uint SignatureTop = 4;
+    public uint SignatureBottom = 4;
 
-    public float CurrentTime { get; private set; } = 0;
+    public AudioSource Audio;
 
-    private bool IsPlayable { get => !this.Paused && this.Music.HasValue; }
+    public Beat Beat { get; private set; } = new(1, 1);
+    private Beat _beatPrevious = new(1, 0);
 
-    private float? BeatDuration
-    {
-        get
-        {
-            if (this.IsPlayable)
-            {
-                Rhythm rhythm = this.Music.Value.rhythm;
-                return 60.0f / rhythm.bpm / (rhythm.signatureBottom / 4);
-            }
-            return null;
-        }
-    }
+    private float BeatDuration => 60.0f / this.Bpm / (this.SignatureBottom / 4);
 
     private void Awake()
     {
@@ -77,43 +49,25 @@ public class BeatManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Start()
-    {
-        // TODO: Remove later, test code
-        this.Music = new Music
-        (
-            rhythm: new Rhythm
-            (
-                bpm: 120,
-                signatureTop: 4,
-                signatureBottom: 4
-            )
-        );
-    }
-
     private void Update()
     {
-        if (this.IsPlayable)
+        this._beatPrevious = this.Beat;
+        this.Beat = this.ComputeBeatAt(this.Audio.time);
+
+        if (this.Beat.beatRounded != this._beatPrevious.beatRounded)
         {
-            this.CurrentTime += Time.deltaTime;
-            this.Beat = this.GetBeatAt(CurrentTime).Value;
-            Time.fixedDeltaTime = BeatDuration.Value;
+            this.OnBeat.Invoke(this.Beat);
         }
     }
 
-    private Beat? GetBeatAt(float time)
+    private Beat ComputeBeatAt(float time)
     {
-        if (this.IsPlayable)
-        {
-            Rhythm rhythm = this.Music.Value.rhythm;
-            float beatDuration = this.BeatDuration.Value;
+        time += this.Offset;
 
-            return new Beat
-            (
-                bar: Mathf.FloorToInt(this.CurrentTime / beatDuration / rhythm.signatureTop) + 1,
-                beat: (this.CurrentTime / beatDuration % rhythm.signatureTop) + 1
-            );
-        }
-        return null;
+        return new Beat
+        (
+            bar: Mathf.FloorToInt(time / this.BeatDuration / this.SignatureTop) + 1,
+            beatPrecise: (time / this.BeatDuration) % this.SignatureTop + 1
+        );
     }
 }

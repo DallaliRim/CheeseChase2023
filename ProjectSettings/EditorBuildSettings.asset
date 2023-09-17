@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 16ce6ff4f02e73e45b662692bfa2e8d9
   - enabled: 1
-    path: Assets/Scenes/MoneyVault.unity
-    guid: 20497dccb3278884b85ae92ab3f36f8b
+    path: Assets/Scenes/VanSystem_working.unity
+    guid: a4bb1ff505342fe47960c66ae8a052b0
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
