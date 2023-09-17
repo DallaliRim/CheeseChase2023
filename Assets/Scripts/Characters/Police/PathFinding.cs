@@ -7,6 +7,8 @@ public class PathFinding : MonoBehaviour
     private GridMovement red;
     private GridMovement blue;
 
+    public Animator anim;
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -51,12 +53,28 @@ public class PathFinding : MonoBehaviour
                 sign = Math.Sign(relativeVector.x);
                 // Debug.Log($"x: {transform.position.x} -> {transform.position.x + sign}");
                 transform.position = new Vector3((int)transform.position.x + sign, transform.position.y, transform.position.z);
+                if (sign > 0)
+                {
+                    anim.SetInteger("AnimInt", 4);
+                }
+                if (sign < 0)
+                {
+                    anim.SetInteger("AnimInt", 3);
+                }
             }
             else
             {
                 sign = Math.Sign(relativeVector.y);
                 // Debug.Log($"y: {transform.position.y} -> {transform.position.y + sign}");
                 transform.position = new Vector3(transform.position.x, (int)transform.position.y + sign, transform.position.z);
+                if (sign > 0)
+                {
+                    anim.SetInteger("AnimInt", 1);
+                }
+                if (sign < 0)
+                {
+                    anim.SetInteger("AnimInt", 2);
+                }
             }
         }
         else
