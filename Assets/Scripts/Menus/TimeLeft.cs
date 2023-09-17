@@ -6,6 +6,7 @@ using UnityEngine;
 public class TimeLeft : MonoBehaviour
 {
     public GameObject police;
+    public GameOver gameOver;
     private TextMeshProUGUI timeText;
     private float TimeRemaining => BeatManager.Instance.TimeLeft;
     private bool spawned;
@@ -28,6 +29,11 @@ public class TimeLeft : MonoBehaviour
         }
         timeText.text += $"\nPolice Arrive In: {FormatTime(TimeRemaining - 30)}";
         timeText.text += $"\nEscape Available In: {FormatTime(30 - BeatManager.Instance.Audio.time)}";
+
+        if (!PauseMenu.isPaused && !BeatManager.Instance.Audio.isPlaying)
+        {
+            gameOver.ShowEndScreen(false);
+        }
     }
 
     private static string FormatTime(float time)

@@ -11,6 +11,7 @@ TagManager:
   - pauseMenu
   - countdown
   - doorChangeOrder
+  - End
   layers:
   - Default
   - TransparentFX

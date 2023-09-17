@@ -18,7 +18,7 @@ public class GameMusicController : MonoBehaviour
     {
         if (!PauseMenu.isPaused && !playing)
         {
-            audioSource.Play();
+            audioSource.UnPause();
         }
         else if (PauseMenu.isPaused && playing)
         {
