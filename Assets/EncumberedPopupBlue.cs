@@ -12,14 +12,7 @@ public class EncumberedPopupBlue : MonoBehaviour
 
     private void Update()
     {
-        if (Manager_Money.moneyPlayerBlueOnHand >= Manager_Money.maxMoneyAmount)
-        {
-            popup.SetActive(true);
-        }
-        else
-        {
-            popup.SetActive(false);
-        }
+        popup.SetActive(Manager_Money.cheesePlayerBlueStatic > 0);
     }
 
     public void EncumberedWarningPopup()

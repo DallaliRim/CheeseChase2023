@@ -14,36 +14,21 @@ public class MoneyPickup : MonoBehaviour
     // depending on which player touches the money
     public UnityEvent bluePicksUp;
     public UnityEvent redPicksUp;
-
+    private bool _canPickUp = true;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("bluePlayer"))
+        if (_canPickUp && other.CompareTag("bluePlayer") && Manager_Money.cheesePlayerBlueStatic == 0)
         {
-            if (Manager_Money.moneyPlayerBlueOnHand <= Manager_Money.maxMoneyAmount)
-            {
-                bluePicksUp.Invoke();
-                Destroy(gameObject);
-            }
-            else
-            {
-                // PopUp('blue');
-                Debug.Log("Blue is carrying too much money");
-            }
+            bluePicksUp.Invoke();
         }
-        if (Manager_Money.moneyPlayerRedOnHand <= Manager_Money.maxMoneyAmount)
+        else if (_canPickUp && other.CompareTag("redPlayer") && Manager_Money.cheesePlayerRedStatic == 0)
         {
-            if (other.CompareTag("redPlayer"))
-            {
-                redPicksUp.Invoke();
-                Destroy(gameObject);
-            }
-            else
-            {
-                Debug.Log("Red is carrying too much money");
-            }
+            redPicksUp.Invoke();
         }
 
+        _canPickUp = false;
+        Destroy(gameObject);
     }
 }
 
