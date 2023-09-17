@@ -18,8 +18,17 @@ public class PathFinding : MonoBehaviour
         red = GameObject.FindGameObjectWithTag("redPlayer");
         blue = GameObject.FindGameObjectWithTag("bluePlayer");
     }
+    void Start()
+    {
 
-    public void SetAgentPosition()
+    }
+
+    void Update()
+    {
+
+    }
+
+    public void Move()
     {
         Vector2 target =
             Vector2.Distance(red.transform.position, transform.position) < Vector2.Distance(transform.position, blue.transform.position)
@@ -49,8 +58,4 @@ public class PathFinding : MonoBehaviour
             }
         }
     }
-}
-
-internal class blue
-{
 }
